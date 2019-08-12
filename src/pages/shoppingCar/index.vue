@@ -15,14 +15,16 @@
           <p>
             <span>￥</span>
             <span>18.88</span>
-            <span></span>
+            <span>
+              <img src="../../../static/images/vip.png" alt />
+            </span>
           </p>
           <p>分享赚:$499.00</p>
         </div>
         <div>
           <p>
             <span>市场价</span>
-            <span>22.9</span>
+            <span class="shoppingDel">22.9</span>
           </p>
           <p>
             <span>自提价</span>
@@ -64,7 +66,7 @@
             <span>假一赔十 | 7天无忧退回 | 一站式购起</span>
           </p>
         </div>
-        <div>
+        <div id="shoppingText">
           <p>提示</p>
           <p>地区快递暂停，四川连山,阿坝,杆子地区桑快递暂停发</p>
         </div>
@@ -72,10 +74,103 @@
       <!-- 购物车商品图片 -->
       <div class="shoppingCarBanner"></div>
       <!-- 购物车商品相关商品-->
-      <div class="shoppingCarReferrer"></div>
+      <div class="shoppingCarReferrer">
+        <div>
+          <img src="../../../static/images/text_1.png" alt />
+        </div>
+        <div class="shoppingCarList">
+          <dl>
+            <dt>图片</dt>
+            <dd>
+              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
+              <span>￥1999</span>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>图片</dt>
+            <dd>
+              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
+              <span>￥1999</span>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>图片</dt>
+            <dd>
+              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
+              <span>￥1999</span>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt>图片</dt>
+            <dd>
+              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
+              <span>￥1999</span>
+            </dd>
+          </dl>
+
+          <dl>
+            <dt></dt>
+            <dd>
+              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
+              <span>￥1999</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
     </div>
     <!-- 购物车商品添加按钮 -->
     <Button />
+    <!-- 选择颜色尺寸 -->
+    <div class="shoppingSize">
+      <div class="citySize">
+        <div>
+          <p>颜色,尺寸</p>
+          <p>X</p>
+        </div>
+        <div>
+          <dl>
+            <dt></dt>
+            <dd>
+              <p>￥399.50</p>
+              <p>
+                库存:
+                <span>4999</span>
+              </p>
+            </dd>
+          </dl>
+        </div>
+        <div>
+          <p>颜色</p>
+          <p>
+            <span>灰色</span>
+            <span>灰色</span>
+            <span>灰色</span>
+            <span>灰色</span>
+            <span>灰色</span>
+          </p>
+        </div>
+        <div>
+          <p>尺码</p>
+          <p>
+            <span>l(170/92A)</span>
+          </p>
+        </div>
+        <div>
+          <p>数量</p>
+          <p>
+            <span>-</span>
+            <span>0</span>
+            <span>+</span>
+          </p>
+        </div>
+        <div>确定</div>
+      </div>
+    </div>
+    <!-- 优惠卷 -->
+    <div class="shoppingCoupon"></div>
   </div>
 </template>
 <script>
@@ -109,13 +204,13 @@ export default {
   box-sizing: border-box;
   overflow-y: auto;
   flex-direction: column;
-  .shoppingCarSwiper {
-    height: 380rpx;
-    background: red;
-  }
 }
 .shoppingCarMain {
   flex: 1;
+  overflow-y: auto;
+}
+.shoppingCarSwiper {
+  height: 380rpx;
 }
 .shoppingCarCost {
   background: #ffffff;
@@ -137,15 +232,21 @@ export default {
       flex: 1;
       color: rgb(175, 131, 65);
       margin-left: 6rpx;
-      height: 50rpx;
+      height: 100%;
       line-height: 100rpx;
       padding: 0 10rpx 0 0;
+      display: flex;
       span:nth-child(2) {
         font-size: 15px;
         margin-left: -6rpx;
       }
       span:nth-child(1) {
         font-size: 10px;
+      }
+      span:nth-child(3) {
+        width: 60rpx;
+        height: 40rpx;
+        margin-top: 12rpx;
       }
     }
     p:nth-child(3) {
@@ -203,10 +304,181 @@ export default {
     }
   }
 }
+.shoppingCarList {
+  display: flex;
+  flex-wrap: wrap;
+  dl {
+    width: 30%;
+    height: 360rpx;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10rpx;
+    margin-top: 6rpx;
+    dt {
+      height: 70%;
+    }
+    dd {
+      flex: 1;
+      span:nth-child(1) {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      span:nth-child(2) {
+        color: rgb(255, 87, 131);
+      }
+    }
+  }
+}
+
 .Ml {
   padding: 0 0 0 20rpx;
 }
 .pink {
   color: pink;
+}
+#shoppingText {
+  height: 100rpx;
+  line-height: 40rpx;
+}
+.shoppingCarBanner {
+  display: flex;
+  flex: 1;
+  border: 1px solid red;
+}
+.shoppingCarReferrer {
+  display: flex;
+  background: #ffffff;
+  flex-direction: column;
+  flex: 1;
+  div:nth-child(1) {
+    width: 280rpx;
+    height: 110rpx;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.shoppingDel {
+  text-decoration: line-through;
+  margin-left: 6rpx;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.shoppingSize {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.citySize {
+  width: 100%;
+  height: 80%;
+  background: #ffff;
+  position: absolute;
+  z-index: 199;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    padding: 0 20rpx;
+    justify-content: space-between;
+    margin-top: 6rpx;
+    p:nth-child(1) {
+      color: rgb(154, 168, 153);
+    }
+  }
+  div:nth-child(1) {
+    height: 60rpx;
+    line-height: 60rpx;
+    p:nth-child(1) {
+      color: #000;
+    }
+  }
+  div:nth-child(2) {
+    height: 220rpx;
+    dl {
+      width: 100%;
+      display: flex;
+      dt {
+        background: red;
+        width: 30%;
+      }
+      dd {
+        padding: 0 20rpx;
+        p:nth-child(1) {
+          color: #000;
+        }
+        p:nth-child(2) {
+          color: #ccc;
+        }
+      }
+    }
+  }
+  div:nth-child(3) {
+    flex-direction: column;
+    height: 220rpx;
+    p:nth-child(2) {
+      flex: 1;
+      flex-wrap: wrap;
+      margin-top: 10rpx;
+      span {
+        padding: 0rpx 30rpx;
+        border-radius: 30rpx;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+  div:nth-child(4) {
+    height: 220rpx;
+    flex-direction: column;
+    p:nth-child(2) {
+      flex: 1;
+      flex-wrap: wrap;
+      margin-top: 10rpx;
+      span {
+        padding: 0rpx 30rpx;
+        border-radius: 30rpx;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+  div:nth-child(5) {
+    height: 100rpx;
+    line-height: 100rpx;
+    p:nth-child(2) {
+      border: 1px solid #ccc;
+      width: 180rpx;
+      span {
+      }
+    }
+  }
+  div:last-child {
+    flex: 1;
+    display: block;
+    line-height: 100rpx;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    background: linear-gradient(
+      to right,
+      rgb(255, 0, 212),
+      rgb(167, 40, 139)
+    ); /* 标准的语法 */
+  }
 }
 </style>

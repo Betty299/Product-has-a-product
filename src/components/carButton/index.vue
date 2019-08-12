@@ -32,7 +32,7 @@ export default {
   width: 100%;
   display: flex;
   height: 110rpx;
-  
+
   line-height: 110rpx;
   div:nth-child(1) {
     display: flex;
@@ -45,7 +45,24 @@ export default {
     display: flex;
     p {
       flex: 1;
+    }
+    p:nth-child(1) {
+      background: linear-gradient(); /* 标准的语法 */
       text-align: center;
+      background: linear-gradient(
+        to right,
+        rgb(216, 114, 190),
+        rgb(223, 155, 208)
+      ); /* 标准的语法 */
+    }
+    p:nth-child(2) {
+      background: linear-gradient(); /* 标准的语法 */
+      text-align: center;
+      background: linear-gradient(
+        to right,
+        rgb(255, 0, 212),
+        rgb(167, 40, 139)
+      ); /* 标准的语法 */
     }
   }
 }
