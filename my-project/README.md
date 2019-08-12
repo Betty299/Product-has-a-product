@@ -1,37 +1,54 @@
-# my-project
+#积纳优品
+<h2>1.项目简介</h2>
 
-> A Mpvue project
+````
+此项目是仿照微信小程序做的面试类项目。框架已mpvue为主
+````
+<h2>2.技术栈</h2>
 
-## Build Setup
+````
+主框架为React，结合mobx的一套较为前潮的模式请求后台的数据完成项目的开发。
 
-``` bash
-# 初始化项目
-vue init mpvue/mpvue-quickstart myproject
-cd myproject
+````
+<h2>3.项目运行</h2>
 
-# 安装依赖
-yarn
+````
+# 克隆项目
+git@github.com:28468/easyShop.git
 
-# 开发时构建
-npm dev
+# 下载依赖
+npm install
 
-# 打包构建
-npm build
+# 启动服务
+npm start 
 
-# 指定平台的开发时构建(微信、百度、头条、支付宝)
-npm dev:wx
-npm dev:swan
-npm dev:tt
-npm dev:my
+# 前端项目打包
+npm run build
+````
+<h2>4.项目结构</h2>
 
-# 指定平台的打包构建
-npm build:wx
-npm build:swan
-npm build:tt
-npm build:my
+````
+├── exam //目录
+├── dist // 源代码编译后的生成线上环境代码
+├── node_modules // 依赖的第三方包
+├── src // 生产目录
+│ ├── components //各种组件
+| ├── models //命名空间
+| ├── routes //路由
+| ├── views //视图
+| ├── services //接口
+| ├── utils //公共方法
+| ├── scss //样式处理
+│ ├── index.css //入口文件样式
+│ ├── index.js //入口文件
+├── package.json // 项目信息文件
+└── README.md // 说明
 
-# 生成 bundle 分析报告
-npm run build --report
-```
+````
+<h2>5.小结</h2>
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+````
+项目简结
+难度：简单
+开发时长：编码一周
+````
