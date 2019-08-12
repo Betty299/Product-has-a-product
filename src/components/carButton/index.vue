@@ -1,5 +1,5 @@
-
 <template>
+<!-- 收藏加入购物车 -->
   <div class="carButton">
     <div>收藏</div>
     <div>

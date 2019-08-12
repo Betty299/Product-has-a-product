@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-12 15:38:39
+ * @LastEditTime: 2019-08-12 23:43:44
+ * @LastEditors: Please set LastEditors
+ -->
 
 <template>
   <!-- 购物车页面 -->
@@ -123,7 +130,7 @@
     </div>
     <!-- 购物车商品添加按钮 -->
     <Button />
-    <!-- 选择颜色尺寸 -->
+    <!-- 选择颜色尺寸弹框 -->
     <div class="shoppingSize">
       <div class="citySize">
         <div>
@@ -150,11 +157,18 @@
             <span>灰色</span>
             <span>灰色</span>
             <span>灰色</span>
+            <span>灰色</span>
+            <span>灰色</span>
+            <span>灰色</span>
           </p>
         </div>
         <div>
           <p>尺码</p>
           <p>
+            <span>l(170/92A)</span>
+            <span class="lengthSize">l(170/92A)</span>
+            <span>l(170/92A)</span>
+            <span>l(170/92A)</span>
             <span>l(170/92A)</span>
           </p>
         </div>
@@ -169,16 +183,28 @@
         <div>确定</div>
       </div>
     </div>
-    <!-- 优惠卷 -->
-    <div class="shoppingCoupon"></div>
+    <!-- 优惠卷弹框 -->
+    <div class="shoppingCoupon">
+      <div class="cityCoupon">
+        <h5>优惠卷</h5>
+        <div>可领取优惠卷</div>
+        <div>
+          <Coupon></Coupon>
+          <Coupon></Coupon>
+        </div>
+        <div>完成</div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 import Button from "../../components/carButton";
+import Coupon from "../../components/coupon";
 export default {
   props: {},
   components: {
-    Button
+    Button,
+    Coupon
   },
   data() {
     return {};
@@ -372,8 +398,9 @@ img {
   width: 100%;
   height: 100%;
 }
-
+//  选择颜色尺寸弹框
 .shoppingSize {
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -436,7 +463,12 @@ img {
       flex: 1;
       flex-wrap: wrap;
       margin-top: 10rpx;
+      display: flex;
       span {
+        height: 50rpx;
+        line-height: 50rpx;
+        margin-left: 15rpx;
+        flex-shrink: 0;
         padding: 0rpx 30rpx;
         border-radius: 30rpx;
         border: 1px solid #ccc;
@@ -450,7 +482,13 @@ img {
       flex: 1;
       flex-wrap: wrap;
       margin-top: 10rpx;
+      display: flex;
       span {
+        font-size: 14px;
+        height: 50rpx;
+        line-height: 50rpx;
+        margin: 15rpx 10rpx 0 0;
+        flex-shrink: 0;
         padding: 0rpx 30rpx;
         border-radius: 30rpx;
         border: 1px solid #ccc;
@@ -460,10 +498,18 @@ img {
   div:nth-child(5) {
     height: 100rpx;
     line-height: 100rpx;
+    align-items: center;
     p:nth-child(2) {
       border: 1px solid #ccc;
       width: 180rpx;
+      display: flex;
+      height: 60rpx;
       span {
+        display: block;
+        flex: 1;
+        border-right: 1px solid #ccc;
+        text-align: center;
+        line-height: 60rpx;
       }
     }
   }
@@ -480,5 +526,64 @@ img {
       rgb(167, 40, 139)
     ); /* 标准的语法 */
   }
+}
+// 优惠卷
+.shoppingCoupon {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  .cityCoupon {
+    width: 100%;
+    height: 45%;
+    background: #ffff;
+    position: absolute;
+    z-index: 199;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    h5 {
+      width: 100%;
+      height: 100rpx;
+      line-height: 100rpx;
+      text-align: center;
+    }
+    div {
+      padding: 0 0 0 10rpx;
+    }
+    div:nth-child(3) {
+      flex: 1;
+      margin-top: 8rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    div:last-child {
+      margin-top: 45rpx;
+      flex: 1;
+      display: block;
+      line-height: 100rpx;
+      color: #fff;
+      font-size: 20px;
+      text-align: center;
+      background: linear-gradient(
+        to right,
+        rgb(255, 0, 212),
+        rgb(167, 40, 139)
+      ); /* 标准的语法 */
+    }
+  }
+}
+.lengthSize {
+  color: #fff;
+  background: rgb(51, 214, 197);
+  border: none;
 }
 </style>
