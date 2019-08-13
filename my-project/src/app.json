@@ -1,14 +1,23 @@
 {
   "pages": [
+<<<<<<< HEAD
         "pages/index/main",
     "pages/home/main",
 
     "pages/counter/main"
+=======
+    "pages/shoppingCar/main",
+    "pages/submitOrder/main",
+    "pages/orderdetail/main",
+    "pages/setting/main",
+    "pages/home/main",
+    "pages/favorite/main"
+>>>>>>> 28cfa5ce00c7e65b5b32c450802e224721d59ed4
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "积纳有品",
     "navigationBarTextStyle": "black"
   }
 }
