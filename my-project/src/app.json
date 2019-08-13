@@ -1,7 +1,7 @@
 {
   "pages": [
+    "pages/shoppingCar/main",
     "pages/home/main",
-    "pages/shoppingCar/main", 
     "pages/submitOrder/main"
   ],
   "window": {
