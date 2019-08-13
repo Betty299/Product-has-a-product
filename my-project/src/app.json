@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/orderdetail/main",
     "pages/setting/main",
     "pages/home/main",
     "pages/favorite/main"
