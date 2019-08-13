@@ -1,4 +1,5 @@
 import fly from "../../utils/request";
-export let produc=()=>{
-    return fly.post("https://upapi.jinaup.com/api/open/microOrder/place/getCMicroOrderList/0");
+
+export function product(){
+    return fly.post("/api/open/product/category/query/1.0.0");
 }
