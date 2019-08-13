@@ -1,0 +1,30 @@
+<template name="50d9436e">
+  <view class="_div data-v-c31468fa wrap">
+    <view class="_ul data-v-c31468fa uls">
+      <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0_'+index}}" data-comkey="{{$k}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" class="_li data-v-c31468fa {{ind === index ? 'active' : null}}">{{item}}</view>
+    </view>
+    <view class="_section data-v-c31468fa">
+      <view class="_div data-v-c31468fa dl">
+        <view class="_div data-v-c31468fa">
+          <<<<<<< HEAD:my-project/src/pages/home/index.vue <view class="_p data-v-c31468fa">2019-01-17 17:18:50
+        </view>
+        <view class="_p data-v-c31468fa"></view>
+        <view class="_p data-v-c31468fa"></view>
+        <view class="_p data-v-c31468fa">代付款</view>
+      </view>
+      <view class="_dl data-v-c31468fa">
+        <view class="_dt data-v-c31468fa">
+          <image src="../../static/images/1.png" class="_image data-v-c31468fa"></image>
+        </view>
+        <view class="_dd data-v-c31468fa"><label class="_span data-v-c31468fa">邦宝适绿纸尿裤大号L164片超薄透气男女通用婴儿尿片尿不湿</label>
+          <view class="_p data-v-c31468fa">规格:XL</view>
+          <view class="_div data-v-c31468fa"><label class="_span data-v-c31468fa">￥52.50</label><label class="_span data-v-c31468fa">x1</label></view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-c31468fa total">
+      <view class="_div data-v-c31468fa"><label class="_span data-v-c31468fa">共2件商品</label><label class="_span data-v-c31468fa">合计：￥52.50</label></view>
+      <view class="_div data-v-c31468fa"><button class="_button data-v-c31468fa">取消订单</button> <button class="_button data-v-c31468fa">去付款19:02</button></view>
+    </view>
+  </view> ======= home >>>>>>> whp:src/pages/home/index.vue </view>
+</template>

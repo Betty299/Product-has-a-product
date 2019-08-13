@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/shoppingList/main",
+    "pages/homepage/main"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
