@@ -22,8 +22,12 @@
 		}
 	},
 	"compileType": "miniprogram",
+<<<<<<< HEAD
 	"libVersion": "2.7.7",
 	"appid": "wx6e5a9c4315f785b5",
+=======
+	"appid": "wx3375420e2c184d34",
+>>>>>>> 2cb60082fd34509566f9a57ebaf554b646ab548d
 	"projectname": "my-project",
 	"miniprogramRoot": "dist/wx/",
 	"cloudfunctionTemplateRoot": "",
