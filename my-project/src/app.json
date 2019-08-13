@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/index/main",
+    "pages/home/main",
     "pages/shoppingCar/main",
     "pages/submitOrder/main",
     "pages/orderdetail/main",
     "pages/setting/main",
-    "pages/home/main",
-    "pages/favorite/main"
+    "pages/favorite/main",
+    "pages/shoppingList/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

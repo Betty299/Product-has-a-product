@@ -237,7 +237,7 @@ export default {
   created() {},
   mounted() {
     this.cartList({
-      pageInde:'1'
+     pid:50960
     });
   },
   onLoad() {
