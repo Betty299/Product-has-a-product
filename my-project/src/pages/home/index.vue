@@ -6,7 +6,6 @@
 <section>
 <div class="dl">
     <div>
-<<<<<<< HEAD:my-project/src/pages/home/index.vue
     <p>2019-01-17 17:18:50</p>
     <p></p>
     <p></p>
@@ -31,9 +30,6 @@
     </div>
 </div>
 </section>
-=======
-      home
->>>>>>> whp:src/pages/home/index.vue
     </div>
 </template>
 <script>

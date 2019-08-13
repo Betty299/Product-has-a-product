@@ -3,10 +3,7 @@
     "pages/orderdetail/main",
     "pages/setting/main",
     "pages/home/main",
-    "pages/favorite/main",
-    "pages/shoppingList/main",
-    "pages/homepage/main"
-
+    "pages/favorite/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

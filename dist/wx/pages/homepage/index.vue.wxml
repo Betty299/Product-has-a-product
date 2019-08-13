@@ -1,5 +1,0 @@
-<import src="/components/footerTab/index.vue.wxml" /><template name="622b0f3d">
-  <view class="_div data-v-7b01d95c wrap">
-    <view class="_div data-v-7b01d95c wrapper"> homepage </view> <template data="{{...$root[$kk+'0'], $root}}" is="55b938ab"></template>
-  </view>
-</template>
