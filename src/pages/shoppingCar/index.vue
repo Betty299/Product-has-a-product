@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-12 15:38:39
- * @LastEditTime: 2019-08-12 23:43:44
+ * @LastEditTime: 2019-08-13 08:30:11
  * @LastEditors: Please set LastEditors
  -->
 
@@ -11,7 +11,9 @@
   <div class="shoppingCarWrap">
     <div class="shoppingCarMain">
       <!-- 购物车轮播 -->
-      <div class="shoppingCarSwiper"></div>
+      <div class="shoppingCarSwiper">
+        <Swiper :images="images"></Swiper>
+      </div>
       <!-- 购物车商品介绍 -->
       <div class="shoppingCarCost">
         <div>
@@ -131,7 +133,7 @@
     <!-- 购物车商品添加按钮 -->
     <Button />
     <!-- 选择颜色尺寸弹框 -->
-    <div class="shoppingSize">
+    <div v-if="colorPop" class="shoppingSize">
       <div class="citySize">
         <div>
           <p>颜色,尺寸</p>
@@ -184,7 +186,7 @@
       </div>
     </div>
     <!-- 优惠卷弹框 -->
-    <div class="shoppingCoupon">
+    <div v-if="couponPop" class="shoppingCoupon">
       <div class="cityCoupon">
         <h5>优惠卷</h5>
         <div>可领取优惠卷</div>
@@ -200,14 +202,29 @@
 <script>
 import Button from "../../components/carButton";
 import Coupon from "../../components/coupon";
+import Swiper from "../../components/Swiper";
 export default {
   props: {},
   components: {
     Button,
-    Coupon
+    Coupon,
+    Swiper
   },
   data() {
-    return {};
+    return {
+      colorPop: false,
+      couponPop: true,
+      images: [
+        {
+          url:
+            "https://img-oss.yunshanmeicai.com/goods/default/31d8dfa4-0d7b-4694-80f9-41b07c9d0a3a.png"
+        },
+        {
+          url:
+            "https://img-oss.yunshanmeicai.com/goods/default/e83c8f0f-4acc-4729-bcbb-294f2b314977.jpg"
+        }
+      ]
+    };
   },
 
   computed: {},
@@ -400,7 +417,6 @@ img {
 }
 //  选择颜色尺寸弹框
 .shoppingSize {
-  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -413,7 +429,7 @@ img {
 }
 .citySize {
   width: 100%;
-  height: 80%;
+  height: 76%;
   background: #ffff;
   position: absolute;
   z-index: 199;
@@ -430,14 +446,14 @@ img {
     }
   }
   div:nth-child(1) {
-    height: 60rpx;
-    line-height: 60rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     p:nth-child(1) {
       color: #000;
     }
   }
   div:nth-child(2) {
-    height: 220rpx;
+    height: 250rpx;
     dl {
       width: 100%;
       display: flex;
@@ -457,8 +473,9 @@ img {
     }
   }
   div:nth-child(3) {
+    margin-top: 20rpx;
     flex-direction: column;
-    height: 220rpx;
+    height: 250rpx;
     p:nth-child(2) {
       flex: 1;
       flex-wrap: wrap;
@@ -476,7 +493,7 @@ img {
     }
   }
   div:nth-child(4) {
-    height: 220rpx;
+    height: 250rpx;
     flex-direction: column;
     p:nth-child(2) {
       flex: 1;
@@ -485,8 +502,8 @@ img {
       display: flex;
       span {
         font-size: 14px;
-        height: 50rpx;
-        line-height: 50rpx;
+        height: 60rpx;
+        line-height: 60rpx;
         margin: 15rpx 10rpx 0 0;
         flex-shrink: 0;
         padding: 0rpx 30rpx;
@@ -496,8 +513,8 @@ img {
     }
   }
   div:nth-child(5) {
-    height: 100rpx;
-    line-height: 100rpx;
+    height: 130rpx;
+    line-height: 130rpx;
     align-items: center;
     p:nth-child(2) {
       border: 1px solid #ccc;
@@ -516,7 +533,8 @@ img {
   div:last-child {
     flex: 1;
     display: block;
-    line-height: 100rpx;
+    margin-top: 20rpx;
+    line-height: 120rpx;
     color: #fff;
     font-size: 20px;
     text-align: center;
@@ -529,7 +547,6 @@ img {
 }
 // 优惠卷
 .shoppingCoupon {
-  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -550,27 +567,25 @@ img {
     flex-direction: column;
     h5 {
       width: 100%;
-      height: 100rpx;
-      line-height: 100rpx;
+      height: 80rpx;
+      line-height: 80rpx;
       text-align: center;
     }
     div {
       padding: 0 0 0 10rpx;
     }
     div:nth-child(3) {
-      flex: 1;
       margin-top: 8rpx;
       display: flex;
-      justify-content: center;
       align-items: center;
       flex-direction: column;
+      flex: 1;
     }
     div:last-child {
-      margin-top: 45rpx;
-      flex: 1;
-      display: block;
-      line-height: 100rpx;
+      height: 110rpx;
+      line-height: 110rpx;
       color: #fff;
+      margin: 20rpx 0 0 0;
       font-size: 20px;
       text-align: center;
       background: linear-gradient(
