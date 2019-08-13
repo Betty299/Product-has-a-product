@@ -203,6 +203,7 @@
 import Button from "../../components/carButton";
 import Coupon from "../../components/coupon";
 import Swiper from "../../components/Swiper";
+import { mapActions, mapState } from "vuex";
 export default {
   props: {},
   components: {
@@ -228,9 +229,17 @@ export default {
   },
 
   computed: {},
-  methods: {},
+  methods: {
+    ...mapActions({
+      cartList: "shoppingCar/cartList"
+    })
+  },
   created() {},
-  mounted() {},
+  mounted() {
+    this.cartList({
+      pageInde:'1'
+    });
+  },
   onLoad() {
     wx.setNavigationBarTitle({
       title: "商品详情"
