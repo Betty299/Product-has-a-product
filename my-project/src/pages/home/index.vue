@@ -48,6 +48,7 @@ export default {
            ind:0
         }
     },
+
     computed:{
   ...mapState({
       list: state => state.home.list
@@ -57,12 +58,13 @@ export default {
             tabs(index){
                 this.ind=index;
              }
-    , ...mapActions({
-      getSuggestion: "home/addData",
-   })
+    ,
+//      ...mapActions({
+//       getSuggestion: "home/addData",
+//    })
     },
     created(){
-this.getSuggestion();
+//this.getSuggestion();
     },
     mounted(){
 

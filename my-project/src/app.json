@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/home/main",
+    "pages/shoppingCar/main",
+    "pages/submitOrder/main",
     "pages/orderdetail/main",
     "pages/setting/main",
     "pages/favorite/main"
