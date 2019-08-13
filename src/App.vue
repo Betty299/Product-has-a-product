@@ -50,5 +50,6 @@ html,body,#id{
   -moz-transition: width 2s;
   -webkit-transition: width 2s;
   -o-transition: width 2s;
+  font-size: 14px;
 }
 </style>

@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/shoppingList/main"
+    "pages/shoppingList/main",
+    "pages/homepage/main"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
