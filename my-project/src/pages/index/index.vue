@@ -96,7 +96,7 @@
             <label class="_span">精选好物</label>
             <label class="_spans">等你来抢</label>
           </div>
-          <img src="/static/images/Group 2.svg" />
+          <img src="/static/images/Group2.svg" />
         </div>
         <homeDl></homeDl>
         <div class="tu">
