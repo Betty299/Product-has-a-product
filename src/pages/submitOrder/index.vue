@@ -1,10 +1,15 @@
 <template>
   <!-- 提交订单 -->
   <div class="orderWrap">
+    <!-- <div class="orderFixed">
+      <div></div>
+      <div>阿斯奥术大师多按时打卡送到哪书籍的哈所打击爱神的箭爱是点击</div>
+    </div>-->
     <div class="orderAddress">
-      <p></p>
+      <p>+</p>
       <p>新增收获地址</p>
     </div>
+    <div class="orderUser"></div>
     <div class="orderMain">
       <div class="mainTime"></div>
       <div class="mainDl"></div>
@@ -60,6 +65,14 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  div {
+    display: flex;
+  }
 }
+// .orderFixed {
+//   position: fixed;
+//   left: 0;
+//   background: rgb(255, 246, 245)
+// }
 // 244 99 133
 </style>
