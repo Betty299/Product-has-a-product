@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/home/main",
-    "pages/shoppingCar/main"
+    "pages/shoppingCar/main", 
+    "pages/submitOrder/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

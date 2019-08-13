@@ -1,9 +1,9 @@
 <template>
-<!-- 收藏加入购物车 -->
+  <!-- 收藏加入购物车 -->
   <div class="carButton">
     <div>收藏</div>
     <div>
-      <p>加入购物车</p>
+      <p @click="addShoooing">加入购物车</p>
       <p>立即购买</p>
     </div>
   </div>
@@ -17,7 +17,11 @@ export default {
   },
 
   computed: {},
-  methods: {},
+  methods: {
+    addShoooing() {
+     
+    }
+  },
   created() {},
   mounted() {},
   onLoad() {

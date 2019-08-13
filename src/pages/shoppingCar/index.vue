@@ -213,7 +213,7 @@ export default {
   data() {
     return {
       colorPop: false,
-      couponPop: true,
+      couponPop: false,
       images: [
         {
           url:

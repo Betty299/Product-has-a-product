@@ -31,12 +31,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "shoppingCar",
 					"pathName": "pages/shoppingCar/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/submitOrder/main",
 					"scene": null
 				}
 			]
