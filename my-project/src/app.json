@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/orderdetail/main",
+    "pages/setting/main",
+    "pages/home/main",
+    "pages/favorite/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "积纳有品",
+    "navigationBarTextStyle": "black"
+  }
+}
