@@ -1,0 +1,100 @@
+<template name="4a611a16">
+  <view class="_div data-v-248619ec wrap">
+    <view class="_div data-v-248619ec scroll-home">
+      <scroll-view class="_scroll-view data-v-248619ec navScroll" scroll-x>
+        <view class="_li data-v-248619ec">爆款专区</view>
+        <view class="_li data-v-248619ec">衣物清洁</view>
+        <view class="_li data-v-248619ec">家庭清洁</view>
+        <view class="_li data-v-248619ec">清洁工具</view>
+        <view class="_li data-v-248619ec">家庭清洁</view>
+        <view class="_li data-v-248619ec">清洁工具</view>
+        <view class="_li data-v-248619ec">家庭清洁</view>
+        <view class="_li data-v-248619ec">清洁工具</view>
+        <view class="_li data-v-248619ec">家庭清洁</view>
+      </scroll-view>
+    </view>
+    <view class="_div data-v-248619ec content">
+      <view class="_div data-v-248619ec spTitle">爆款专区 惊喜热卖</view>
+      <view class="_div data-v-248619ec special">
+        <view class="_div data-v-248619ec specialbox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">所规白癜风跟不上东方宾馆定的积分</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+        <view class="_div data-v-248619ec specialbox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">所规定的积分</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+        <view class="_div data-v-248619ec specialbox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">所规定的积分</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+        <view class="_div data-v-248619ec specialbox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">所规定的积分</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-248619ec spTitle">爆款专区 惊喜热卖</view>
+      <view class="_div data-v-248619ec specialY">
+        <view class="_div data-v-248619ec specialYbox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">二季度是大家介绍的扣税的</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-248619ec spTitle">爆款专区 惊喜热卖</view>
+      <view class="_div data-v-248619ec specialthree">
+        <view class="_div data-v-248619ec specialthreebox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">所规白癜风跟不上东方宾馆定的积分</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+        <view class="_div data-v-248619ec specialthreebox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">所规白癜风跟不上东方宾馆定的积分</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+        <view class="_div data-v-248619ec specialthreebox">
+          <view class="_div data-v-248619ec">
+            <image src="/static/images/zt1.PNG" alt class="_img data-v-248619ec"></image>
+          </view>
+          <view class="_div data-v-248619ec">
+            <view class="_h4 data-v-248619ec">所规白癜风跟不上东方宾馆定的积分</view>
+            <view class="_div data-v-248619ec speciaText"><label class="_span data-v-248619ec">￥270</label><label class="_span data-v-248619ec">￥500</label></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
