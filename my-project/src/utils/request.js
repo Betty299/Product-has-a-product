@@ -8,7 +8,7 @@ const fly = new Fly;
 //设置超时
 fly.config.timeout = 10000;
 //设置请求基地址
-fly.config.baseURL = "https://sign.jasonandjay.com"
+fly.config.baseURL = "https://upapi.jinaup.com/"
 
 //添加请求拦截器
 fly.interceptors.request.use((request)=>{
