@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/main",
     "pages/home/main",
+    "pages/index/main",
     "pages/shoppingCar/main",
     "pages/submitOrder/main",
     "pages/orderdetail/main",
