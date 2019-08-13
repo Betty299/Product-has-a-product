@@ -5,7 +5,8 @@
     "pages/orderdetail/main",
     "pages/setting/main",
     "pages/home/main",
-    "pages/favorite/main"
+    "pages/favorite/main",
+    "pages/shoppingList/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
