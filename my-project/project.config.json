@@ -4,30 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"coverView": true,
 		"autoAudits": false,
-		"uglifyFileName": true,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-<<<<<<< HEAD
 	"libVersion": "2.7.7",
-	"appid": "wx6e5a9c4315f785b5",
-=======
 	"appid": "wx3375420e2c184d34",
->>>>>>> 2cb60082fd34509566f9a57ebaf554b646ab548d
 	"projectname": "my-project",
 	"miniprogramRoot": "dist/wx/",
 	"cloudfunctionTemplateRoot": "",
@@ -35,8 +22,6 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -54,16 +39,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": -1,
-					"name": "首页",
-					"pathName": "pages/homepage/main",
-					"query": "",
-					"scene": null
-				}
-			]
+			"current": -1,
+			"list": []
 		}
 	}
 }

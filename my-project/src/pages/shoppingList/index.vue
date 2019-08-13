@@ -103,7 +103,6 @@ export default {
     return {};
   },
   created() {
-    console.log(this.$refs.scrollX);
   },
   components: {},
 
