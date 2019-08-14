@@ -59,12 +59,12 @@ export default {
                 this.ind=index;
              }
     ,
-//      ...mapActions({
-//       getSuggestion: "home/addData",
-//    })
+     ...mapActions({
+      getSuggestion: "home/addData",
+   })
     },
     created(){
-//this.getSuggestion();
+this.getSuggestion({pageIndex:"1",pageSize:"2"});
     },
     mounted(){
 

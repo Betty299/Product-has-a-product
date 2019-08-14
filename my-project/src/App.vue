@@ -30,7 +30,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@font-face {
+  font-family: 'iconfont';  /* project id 1350309 */
+  src: url('//at.alicdn.com/t/font_1350309_10tenm9iqbo.eot');
+  src: url('//at.alicdn.com/t/font_1350309_10tenm9iqbo.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1350309_10tenm9iqbo.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1350309_10tenm9iqbo.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1350309_10tenm9iqbo.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1350309_10tenm9iqbo.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 *{
   padding: 0;
   margin: 0;

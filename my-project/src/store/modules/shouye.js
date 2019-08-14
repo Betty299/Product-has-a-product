@@ -1,4 +1,4 @@
-import { product } from "../../service/index";
+import { shouyelist } from "../../service/index";
 const state = {
   list:[]
 };
@@ -11,7 +11,7 @@ const mutations = {
 const actions = {
   //添加试题
   async addData({ commit }, payload) {
-    let data = await product(payload);
+    let data = await shouyelist(payload);
     console.log("res",data);
     commit("pushAdd", data);
   }
