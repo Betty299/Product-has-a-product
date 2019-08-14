@@ -1,18 +1,16 @@
 {
   "pages": [
-<<<<<<< HEAD
-        "pages/index/main",
-    "pages/home/main",
-
-    "pages/counter/main"
-=======
-    "pages/shoppingCar/main",
-    "pages/submitOrder/main",
     "pages/orderdetail/main",
+    "pages/submitOrder/main",
+    "pages/index/main",
+    "pages/favorite/main",
     "pages/setting/main",
+
+
+    "pages/shoppingCar/main",
     "pages/home/main",
-    "pages/favorite/main"
->>>>>>> 28cfa5ce00c7e65b5b32c450802e224721d59ed4
+    "pages/counter/main"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

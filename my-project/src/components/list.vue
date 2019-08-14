@@ -24,15 +24,26 @@
   </div>
 </template>
 <script>
+import {mapState,mapActions } from "vuex"
 export default {
   props: {},
   components: {},
   data() {
     return {};
   },
-  computed: {},
-  methods: {},
-  created() {},
+  computed: {
+    ...mapState({
+      list:state=>state.shouye.list
+    })
+  },
+  methods: {
+    ...mapActions({
+      getshouyelist:"/shouye/list"
+    })
+  },
+  created() {
+    this.getshouyelist()
+  },
   mounted() {}
 };
 </script>
