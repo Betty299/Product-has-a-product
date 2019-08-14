@@ -33,6 +33,7 @@
     </div>
 </template>
 <script>
+import { mapState, mapActions } from "vuex";
 import tabs from "../../components/tabs";
 export default {
     props:{
@@ -49,15 +50,21 @@ export default {
     },
 
     computed:{
-
+  ...mapState({
+      list: state => state.home.list
+    })
     },
     methods:{
             tabs(index){
                 this.ind=index;
-            }
+             }
+    ,
+     ...mapActions({
+      getSuggestion: "home/addData",
+   })
     },
     created(){
-
+this.getSuggestion({pageIndex:"1",pageSize:"2"});
     },
     mounted(){
 

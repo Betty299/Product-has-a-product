@@ -1,16 +1,29 @@
 {
   "pages": [
+<<<<<<< HEAD
+=======
+    "pages/home/main",
+    "pages/index/main",
+    "pages/shoppingCar/main",
+    "pages/submitOrder/main",
+>>>>>>> 7b6746d4f1fbe860223f13f7de0cf9f63b78eb7d
     "pages/orderdetail/main",
     "pages/submitOrder/main",
     "pages/index/main",
     "pages/favorite/main",
     "pages/setting/main",
+<<<<<<< HEAD
 
 
     "pages/shoppingCar/main",
     "pages/home/main",
     "pages/counter/main"
 
+=======
+    "pages/favorite/main",
+    "pages/shoppingList/main",
+    "pages/search/main"
+>>>>>>> 7b6746d4f1fbe860223f13f7de0cf9f63b78eb7d
   ],
   "window": {
     "backgroundTextStyle": "light",
