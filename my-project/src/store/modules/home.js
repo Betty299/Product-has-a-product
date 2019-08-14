@@ -12,8 +12,8 @@ const actions = {
   //添加试题
   async addData({ commit }, payload) {
     let data = await product(payload);
-    console.log("res",data.result);
-    commit("pushAdd", data.result);
+    console.log("res",data);
+    commit("pushAdd", data);
   }
 };
 
