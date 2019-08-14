@@ -38,11 +38,11 @@ export default {
   },
   methods: {
     ...mapActions({
-      getshouyelist:"/shouye/list"
+     /*  getshouyelist:"/shouye/list" */
     })
   },
   created() {
-    this.getshouyelist()
+   /*  this.getshouyelist() */
   },
   mounted() {}
 };
