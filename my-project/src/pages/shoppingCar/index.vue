@@ -7,9 +7,9 @@
  -->
 
 <template>
-  <!-- 购物车页面 -->
-
-  <div class="shoppingCarWrap" v-if="productDetails">
+  <!-- 购物车商品页面 -->
+  <!-- v-if="productDetails" 403-->
+  <div class="shoppingCarWrap">
     <div class="shoppingCarMain">
       <!-- 购物车轮播 -->
       <div class="shoppingCarSwiper">
@@ -429,7 +429,7 @@ export default {
   flex-direction: column;
   flex: 1;
   img {
-    height:450rpx;
+    height: 450rpx;
   }
 }
 .shoppingCarReferrer {
