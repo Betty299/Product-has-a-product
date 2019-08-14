@@ -3,24 +3,22 @@
   <div class="carButton">
     <div>收藏</div>
     <div>
-      <p @click="addShoooing">加入购物车</p>
+      <p @click="colorPop()">加入购物车</p>
       <p>立即购买</p>
     </div>
   </div>
 </template>
 <script>
+import { mapActions, mapMutations } from "vuex";
 export default {
   props: {},
   components: {},
   data() {
     return {};
   },
-
   computed: {},
   methods: {
-    addShoooing() {
-     
-    }
+    ...mapMutations("shoppingCar", ["colorPop"]),
   },
   created() {},
   mounted() {},

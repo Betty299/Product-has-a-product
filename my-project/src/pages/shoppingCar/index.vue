@@ -13,7 +13,7 @@
     <div class="shoppingCarMain">
       <!-- 购物车轮播 -->
       <div class="shoppingCarSwiper">
-        <img :src="productDetails.mainImgUrl" alt />
+        <!-- <img :src="productDetails.mainImgUrl" alt /> -->
         <!-- <Swiper :images="images"></Swiper> -->
       </div>
       <!-- 购物车商品介绍 -->
@@ -21,7 +21,7 @@
         <div>
           <p>
             <span>￥</span>
-            <span>{{productDetails.salesPrice}}</span>
+            <!-- <span>{{productDetails.salesPrice}}</span> -->
           </p>
           <p>
             <span>￥</span>
@@ -35,21 +35,21 @@
         <div>
           <p>
             <span>市场价</span>
-            <span class="shoppingDel">{{productDetails.marketPrice}}</span>
+            <!-- <span class="shoppingDel">{{productDetails.marketPrice}}</span> -->
           </p>
           <p>
             <span>自提价</span>
             <span>$</span>
-            <span>{{productDetails.supplyPrice}}</span>
+            <!-- <span>{{productDetails.supplyPrice}}</span> -->
           </p>
         </div>
-        <div>{{productDetails.title}}</div>
+        <!-- <div>{{productDetails.title}}</div> -->
         <div>
           <p>快递包邮</p>
           <p>
             仅剩
             <span>123</span>
-            {{productDetails.unitMeasureValue}}
+            <!-- {{productDetails.unitMeasureValue}} -->
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@
             <span class="pink Ml">满99减20</span>
             <span class="pink Ml">满199减20</span>
           </p>
-          <p>></p>
+          <p @click="couponPop()">></p>
         </div>
         <div>
           <p>说明</p>
@@ -80,12 +80,12 @@
         </div>
         <div id="shoppingText">
           <p>提示</p>
-          <p>{{productDetails.description?productDetails.description:'24小时之内发货'}}</p>
+          <!-- <p>{{productDetails.description?productDetails.description:'24小时之内发货'}}</p> -->
         </div>
       </div>
       <!-- 购物车商品图片 -->
       <div class="shoppingCarBanner" v-for="item in productSrc" :key="item.id">
-        <img :src="item.imgUrl" alt />
+        <!-- <img :src="item.imgUrl" alt /> -->
       </div>
       <!-- 购物车商品相关商品-->
       <div class="shoppingCarReferrer">
@@ -138,11 +138,11 @@
     <!-- 购物车商品添加按钮 -->
     <Button />
     <!-- 选择颜色尺寸弹框 -->
-    <div v-if="colorPop" class="shoppingSize">
+    <div v-if="colorPops" class="shoppingSize">
       <div class="citySize">
         <div>
           <p>颜色,尺寸</p>
-          <p>X</p>
+          <p @click="colorPop()">X</p>
         </div>
         <div>
           <dl>
@@ -191,7 +191,7 @@
       </div>
     </div>
     <!-- 优惠卷弹框 -->
-    <div v-if="couponPop" class="shoppingCoupon">
+    <div v-if="couponPops" class="shoppingCoupon">
       <div class="cityCoupon">
         <h5>优惠卷</h5>
         <div>可领取优惠卷</div>
@@ -199,7 +199,7 @@
           <Coupon></Coupon>
           <Coupon></Coupon>
         </div>
-        <div>完成</div>
+        <div @click="couponPop()">完成</div>
       </div>
     </div>
   </div>
@@ -208,7 +208,7 @@
 import Button from "../../components/carButton";
 import Coupon from "../../components/coupon";
 import Swiper from "../../components/Swiper";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapMutations, mapState } from "vuex";
 export default {
   props: {},
   components: {
@@ -218,8 +218,6 @@ export default {
   },
   data() {
     return {
-      colorPop: false,
-      couponPop: false,
       images: [
         {
           url:
@@ -236,10 +234,13 @@ export default {
   computed: {
     ...mapState({
       productDetails: state => state.shoppingCar.productDetails,
-      productSrc: state => state.shoppingCar.productSrc
+      productSrc: state => state.shoppingCar.productSrc,
+      couponPops: state => state.shoppingCar.couponPop,
+      colorPops: state => state.shoppingCar.colorPop
     })
   },
   methods: {
+    ...mapMutations("shoppingCar", ["couponPop", "colorPop"]), //调用同步的显示隐藏
     ...mapActions({
       cartList: "shoppingCar/cartList",
       detailPicture: "shoppingCar/detailPicture",
@@ -247,25 +248,25 @@ export default {
     })
   },
   created() {},
-  mounted() {
-    this.cartList({
-      //商品详情
-      pid: 18
-    });
-    this.detailPicture({
-      // 只有两张图片
-      pid: 18,
-      bid: 13053,
-      uid: 20,
-      usiid: null
-    }),
-      this.productDetail({
-        // 产品详情图 分为0用户 1店主 2供货商
-        pid: 18,
-        basePid: 18,
-        userIdentity: 0
-      });
-  },
+  // mounted() {
+  //   this.cartList({
+  //     //商品详情
+  //     pid: 18
+  //   });
+  //   this.detailPicture({
+  //     // 只有两张图片
+  //     pid: 18,
+  //     bid: 13053,
+  //     uid: 20,
+  //     usiid: null
+  //   }),
+  //     this.productDetail({
+  //       // 产品详情图 分为0用户 1店主 2供货商
+  //       pid: 18,
+  //       basePid: 18,
+  //       userIdentity: 0
+  //     });
+  // },
   onLoad() {
     wx.setNavigationBarTitle({
       title: "商品详情"
