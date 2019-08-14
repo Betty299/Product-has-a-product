@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <div class="search">
+    <div class="search" >
       <input placeholder="搜索" disabled/>
     </div>
-    <nav class="_scroll">
+    <nav class="_scroll" >
       <li class="_li active">今日推荐</li>
       <li class="_li">奶粉</li>
       <li class="_li">尿不湿</li>
@@ -154,6 +154,7 @@
 <script>
 import homeDl from "../../components/dl";
 import homeList from '../../components/list'
+import {mapState,mapActions } from "vuex"
 export default {
   props: {},
   components: {
@@ -163,9 +164,19 @@ export default {
   data() {
     return {};
   },
-  computed: {},
-  methods: {},
-  created() {},
+  computed: {
+     ...mapState({
+      listone:state=>state.shouye.listone
+    })
+  },
+  methods: {
+     ...mapActions({
+      getshouyelistone:"shouye/shouyeone"
+    })
+  },
+  created() {
+    this.getshouyelistone()
+  },
   mounted() {}
 };
 </script>
