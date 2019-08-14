@@ -84,8 +84,8 @@
         </div>
       </div>
       <!-- 购物车商品图片 -->
-      <div class="shoppingCarBanner">
-        <img :src="productDetails.shareUrl" alt />
+      <div class="shoppingCarBanner" v-for="item in productSrc" :key="item.id">
+        <img :src="item.imgUrl" alt />
       </div>
       <!-- 购物车商品相关商品-->
       <div class="shoppingCarReferrer">
@@ -235,26 +235,36 @@ export default {
 
   computed: {
     ...mapState({
-      productDetails: state => state.shoppingCar.productDetails
+      productDetails: state => state.shoppingCar.productDetails,
+      productSrc: state => state.shoppingCar.productSrc
     })
   },
   methods: {
     ...mapActions({
       cartList: "shoppingCar/cartList",
-      detailPicture:"shoppingCar/detailPicture"
+      detailPicture: "shoppingCar/detailPicture",
+      productDetail: "shoppingCar/productDetail"
     })
   },
   created() {},
   mounted() {
-    this.cartList({ //商品详情
+    this.cartList({
+      //商品详情
       pid: 18
     });
-    this.detailPicture({ // 只有两张图片
-      pid:28,
-      bid:13053,
-      uid:20,
-      usiid:null
-    })
+    this.detailPicture({
+      // 只有两张图片
+      pid: 18,
+      bid: 13053,
+      uid: 20,
+      usiid: null
+    }),
+      this.productDetail({
+        // 产品详情图 分为0用户 1店主 2供货商
+        pid: 18,
+        basePid: 18,
+        userIdentity: 0
+      });
   },
   onLoad() {
     wx.setNavigationBarTitle({
@@ -416,7 +426,11 @@ export default {
 }
 .shoppingCarBanner {
   display: flex;
+  flex-direction: column;
   flex: 1;
+  img {
+    height:450rpx;
+  }
 }
 .shoppingCarReferrer {
   display: flex;
