@@ -67,7 +67,11 @@ export default {
 this.getSuggestion({pageIndex:"1",pageSize:"2"});
     },
     mounted(){
-
+    }
+    ,
+    onLoad(options){
+        let {id}=options;
+        this.tabs(id*1);
     }
 }
 </script>

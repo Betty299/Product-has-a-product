@@ -1,19 +1,46 @@
-import { shouyelist } from "../../service/index";
+import { shouyelist ,shouyeone,shouyehaowu } from "../../service/index";
 const state = {
+  
+  listone:[],
+  listhaowus:[],
   list:[]
 };
 
 const mutations = {
-  pushAdd(state, payload) {
+       //不知道什么数据
+    addshouyeone(state, payload) {
+        state.listone = payload;
+      },
+       //精选好物数据
+    listhaowu(state, payload) {
+       
+        state.listhaowus = payload.items;
+      },
+        //最下边数据
+  addshouyelist(state, payload) {
     state.list = payload;
   }
 };
 const actions = {
-  //添加试题
-  async addData({ commit }, payload) {
-    let data = await shouyelist(payload);
-    console.log("res",data);
-    commit("pushAdd", data);
+    //不知道什么数据
+  async shouyeone({ commit }) {
+    let data = await shouyeone();
+    /* console.log("res.................",data);  */
+    commit("addshouyeone", data);
+  },
+   //精选好物数据
+   async shouyehaowu({ commit }, ) {
+    let data = await shouyehaowu();
+    let li=data.result[7].
+/*   console.log("res.................",data.result);  */
+    commit("listhaowu", li );
+  },
+  //最下边数据
+  async shouyelist({ commit }, ) {
+    let data = await shouyelist();
+    let lisi=data.result;
+    /* console.log("res.................",lisi);  */
+    commit("addshouyelist", lisi);
   }
 };
 

@@ -12,15 +12,26 @@
   </div>
 </template>
 <script>
+import {mapState,mapActions } from "vuex"
 export default {
   props: {},
   components: {},
   data() {
     return {};
   },
-  computed: {},
-  methods: {},
-  created() {},
+   computed: {
+    ...mapState({
+      listhaowus:state=>state.shouye.listhaowus
+    })
+  },
+  methods: {
+    ...mapActions({
+      getshouyelisthaowu:"shouye/shouyehaowu"
+    })
+  },
+  created() {
+    this.getshouyelisthaowu()
+  },
   mounted() {}
 };
 </script>

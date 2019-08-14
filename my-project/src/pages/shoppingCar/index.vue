@@ -8,8 +8,8 @@
 
 <template>
   <!-- 购物车商品页面 -->
-  <!--  403 下面的注释解开就有数据 -->
-  <div class="shoppingCarWrap" v-if="productDetails">
+  <!--  403 下面的注释解开就有数据  v-if="productDetails" -->
+  <div class="shoppingCarWrap">
     <div class="shoppingCarMain">
       <!-- 购物车轮播 -->
       <div class="shoppingCarSwiper">

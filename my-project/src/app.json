@@ -2,6 +2,12 @@
   "pages": [
     "pages/shoppingCar/main",
     "pages/index/main",
+    "pages/mine/main",
+    "pages/name/main",
+    "pages/discounts/main",
+    "pages/goods/main",
+    "pages/address/main",
+    "pages/relation/main",
     "pages/home/main",
     "pages/submitOrder/main",
     "pages/orderdetail/main",
@@ -9,8 +15,7 @@
     "pages/setting/main",
     "pages/shoppingList/main",
     "pages/search/main",
-    "pages/shopping/main",
-    "pages/mine/main"
+    "pages/shopping/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
