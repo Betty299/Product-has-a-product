@@ -96,8 +96,7 @@ export default {
   div {
     display: flex;
     border-radius: 10rpx;
-
-    margin-top: 18rpx;
+    margin-top: 14rpx;
     background: #ffffff;
   }
 }
