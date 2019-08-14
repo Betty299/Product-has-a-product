@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/main",
     "pages/index/main",
     "pages/home/main",
     "pages/shoppingCar/main",
@@ -10,6 +11,7 @@
     "pages/counter/main",
     "pages/shoppingList/main",
     "pages/search/main",
+    "pages/searchList/main",
     "pages/mine/main"
   ],
   "window": {
