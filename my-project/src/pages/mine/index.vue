@@ -42,13 +42,17 @@ export default {
             txt:"待付款",
             id:1
           }, {
-            img:"/static/images/dfh.png",
+            img:"/static/images/daifahuo.svg",
             txt:"待发货",
             id:2
           }, {
-            img:"/static/images/dsh.png",
+            img:"/static/images/daishouhuo.svg",
             txt:"待收货",
             id:3
+          }, {
+            img:"/static/images/tuikuan.svg",
+            txt:"退款退货",
+            id:4
           }
         ],
         listData:[
@@ -80,28 +84,27 @@ export default {
   methods:{
       bindClick(id){
         wx.navigateTo({
-          url:`../mine/myOrder/main?id=${id}`
+          url:"/pages/home/main?id="+id
         })
       },
       bindP(id){
-        console.log(id)
         if(id===1){
             wx.navigateTo({
-              url:"../mine/myCoupon/main"
+              url:"/pages/discounts/main"
             })
         }else if(id===2){
             wx.navigateTo({
-              url: "../mine/shippingAddress/main"
+              url:"/pages/goods/main"
             })
         }
         else if(id===3){
             wx.navigateTo({
-                url:"../mine/connectServer/main"
+                url: "/pages/relation/main"
             })
         }
         else{
           wx.navigateTo({
-            url: "../mine/realNameAuthentication/main"
+            url:"/pages/name/main"
           })
         }
       }
@@ -129,15 +132,15 @@ export default {
   }
 }
 .nav{
-   width: 100%;
-   padding: 0 25rpx;
+   width: 90%;
+   padding:5px 5px;
+   box-sizing: border-box;
   .txt{
-   
     background: #fff;
     margin-top:-60rpx;
     position: absolute;
     top:220rpx;
-    width: 100%;
+    width: 97%;
     height:230rpx;
   >h1{
     font-size: 35rpx;

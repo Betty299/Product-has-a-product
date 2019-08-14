@@ -1,5 +1,11 @@
 {
   "pages": [
+    "pages/mine/main",
+    "pages/name/main",
+    "pages/discounts/main",
+    "pages/goods/main",
+    "pages/address/main",
+    "pages/relation/main",
     "pages/index/main",
     "pages/home/main",
     "pages/shoppingCar/main",
@@ -9,8 +15,7 @@
     "pages/setting/main",
     "pages/counter/main",
     "pages/shoppingList/main",
-    "pages/search/main",
-    "pages/mine/main"
+    "pages/search/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
