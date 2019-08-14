@@ -10,7 +10,7 @@
   <!-- 购物车页面 -->
   <div class="shoppingWrap">
     <!--购物车有无数据时 -->
-    <!-- <div class="shoppingMainNot">
+    <div class="shoppingMainNot">
       <img src="../../../static/images/购物车.png" alt />
     </div>
     <div class="shoppingNot">
@@ -18,9 +18,10 @@
         <img src="../../../static/images/猜你喜欢.png" alt />
       </div>
       <div></div>
-    </div>-->
-    <div class="shoppingMain">
-      <!-- //购物车有数据时显示这个 -->
+    </div>
+
+    <!-- //购物车有数据时显示这个 -->
+    <!-- <div class="shoppingMain">
       <div class="shoppingBlock">
         <div>
           <p class="shoppingRadio"></p>
@@ -43,7 +44,7 @@
       </div>
     </div>
     <div class="shoppingBtn">
-      <div></div>
+      <div class="active"></div>
       <div>全选</div>
       <div>
         总计:
@@ -51,7 +52,7 @@
       </div>
       <div>编辑</div>
       <div>去结算</div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -190,6 +191,7 @@ export default {
   }
 }
 .shoppingBtn {
+  background: #ffffff;
   height: 150rpx;
   display: flex;
   line-height: 150rpx;
@@ -201,5 +203,32 @@ export default {
     width: 50rpx;
     height: 50rpx;
   }
+  & > div:nth-child(2) {
+    margin-left: 20rpx;
+    width: 210rpx;
+  }
+  & > div:nth-child(3) {
+    padding: 0 10rpx;
+    font-size: 13px;
+    span {
+      color: rgb(251, 37, 121);
+    }
+  }
+  div:nth-child(4) {
+    background: rgb(71, 211, 208);
+    padding: 0 43rpx;
+    color: #ffffff;
+  }
+  div:nth-child(5) {
+    padding: 0 10rpx;
+    text-align: center;
+    padding: 0 5rpx;
+    flex: 1;
+    color: #ffffff;
+    background: linear-gradient(to right, rgb(251, 37, 121), rgb(248, 99, 103));
+  }
+}
+.active {
+  background: rgb(71, 211, 208);
 }
 </style>

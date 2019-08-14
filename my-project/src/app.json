@@ -29,7 +29,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/shoppingCar/main",
+        "pagePath": "pages/shopping/main",
         "iconPath": "/static/images/shop1.png",
         "selectedIconPath": "/static/images/shop2.png",
         "text": "购物车"
