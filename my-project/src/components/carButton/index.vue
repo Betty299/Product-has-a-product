@@ -1,7 +1,10 @@
 <template>
   <!-- 收藏加入购物车 -->
   <div class="carButton">
-    <div>收藏</div>
+    <div>
+      <p>♡</p>
+      <p>收藏</p>
+    </div>
     <div>
       <p @click="colorPop()">加入购物车</p>
       <p>立即购买</p>
@@ -18,7 +21,7 @@ export default {
   },
   computed: {},
   methods: {
-    ...mapMutations("shoppingCar", ["colorPop"]),
+    ...mapMutations("shoppingCar", ["colorPop"])
   },
   created() {},
   mounted() {},
@@ -35,7 +38,6 @@ export default {
   display: flex;
   height: 110rpx;
 
-  line-height: 110rpx;
   div:nth-child(1) {
     display: flex;
     flex-direction: column;
@@ -49,6 +51,7 @@ export default {
       flex: 1;
     }
     p:nth-child(1) {
+      line-height: 110rpx;
       background: linear-gradient(); /* 标准的语法 */
       text-align: center;
       background: linear-gradient(
@@ -58,6 +61,7 @@ export default {
       ); /* 标准的语法 */
     }
     p:nth-child(2) {
+      line-height: 110rpx;
       background: linear-gradient(); /* 标准的语法 */
       text-align: center;
       background: linear-gradient(

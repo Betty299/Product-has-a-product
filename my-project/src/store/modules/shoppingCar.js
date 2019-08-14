@@ -4,7 +4,6 @@ const state = {
   productSrc: null, // 产品详情图
   colorPop: false, //  加入购物车选择颜色弹框
   couponPop: false // 优惠卷弹框
-
 }
 const mutations = {
   productDetails (state, payload) {
@@ -34,7 +33,7 @@ const actions = {
     let data = await detailPicture(payload)
     console.log('dier', data)
   },
-  async productDetail (context, { ...payload }) { // 产品详情图
+  async productDetail (context, { ...payload }) { // 产品详情图 ok
     let data = await productDetailPicture(payload)
     context.commit('productSrc', data.result)
   }

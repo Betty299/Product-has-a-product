@@ -631,8 +631,8 @@ img {
       text-align: center;
       background: linear-gradient(
         to right,
-        rgb(255, 0, 212),
-        rgb(167, 40, 139)
+        rgb(251, 37, 211),
+        rgb(248, 99, 103)
       ); /* 标准的语法 */
     }
   }
