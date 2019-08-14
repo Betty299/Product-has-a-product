@@ -187,7 +187,7 @@
             <span>+</span>
           </p>
         </div>
-        <div>确定</div>
+        <div @click="colorPop()">确定</div>
       </div>
     </div>
     <!-- 优惠卷弹框 -->
@@ -499,7 +499,6 @@ img {
       width: 100%;
       display: flex;
       dt {
-        background: red;
         width: 30%;
       }
       dd {

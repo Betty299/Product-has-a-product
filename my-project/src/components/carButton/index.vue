@@ -7,7 +7,9 @@
     </div>
     <div>
       <p @click="colorPop()">加入购物车</p>
-      <p>立即购买</p>
+      <p>
+        <navigator url="/pages/submitOrder/main">立即购买</navigator>
+      </p>
     </div>
   </div>
 </template>

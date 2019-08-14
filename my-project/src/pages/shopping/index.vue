@@ -17,7 +17,56 @@
       <div>
         <img src="../../../static/images/猜你喜欢.png" alt />
       </div>
-      <div></div>
+      <div>
+        <div class="contentBox">
+          <div>
+            <img src="/static/images/2.png" alt />
+          </div>
+          <div>[放电饭煲上岛咖啡]</div>
+          <div>
+            <span>包税</span>
+            <span>满减299减30</span>
+            <span>满299减30</span>
+          </div>
+          <div>
+            <span>￥22.90</span>
+            <span>￥18.88</span>
+            <img src="/static/images/黑卡.svg" alt />
+          </div>
+        </div>
+        <div class="contentBox">
+          <div>
+            <img src="/static/images/2.png" alt />
+          </div>
+          <div>[放电饭煲上岛咖啡]</div>
+          <div>
+            <span>包税</span>
+            <span>满减299减30</span>
+            <span>满299减30</span>
+          </div>
+          <div>
+            <span>￥22.90</span>
+            <span>￥18.88</span>
+            <img src="/static/images/黑卡.svg" alt />
+          </div>
+        </div>
+        <div class="contentBox">
+          <div>
+            <img src="/static/images/2.png" alt />
+          </div>
+          <div>[放电饭煲上岛咖啡]</div>
+          <div>
+            <span>包税</span>
+            <span>满减299减30</span>
+            <span>满299减30</span>
+          </div>
+          <div>
+            <span>￥22.90</span>
+            <span>￥18.88</span>
+            <img src="/static/images/黑卡.svg" alt />
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- //购物车有数据时显示这个 -->
@@ -52,7 +101,7 @@
       </div>
       <div>编辑</div>
       <div>去结算</div>
-    </div> -->
+    </div>-->
   </div>
 </template>
 <script>
@@ -186,7 +235,7 @@ export default {
   }
   & > div:nth-child(2) {
     flex: 1;
-    background: red;
+    display: flex;
     flex-wrap: wrap;
   }
 }
@@ -226,6 +275,62 @@ export default {
     flex: 1;
     color: #ffffff;
     background: linear-gradient(to right, rgb(251, 37, 121), rgb(248, 99, 103));
+  }
+}
+.contentBox {
+  width: 48%;
+  height: 460rpx;
+  padding: 3rpx 20rpx;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 5rpx;
+  margin: 5rpx 0;
+  margin-left: 8rpx;
+}
+.contentBox div {
+  font-size: 16px;
+  &:nth-child(1) {
+    margin-top: 10rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 80%;
+      height: 300rpx;
+    }
+  }
+  &:nth-child(3) {
+    margin-top: 10rpx;
+    display: flex;
+    span {
+      font-size: 10px;
+      border: 1rpx solid rgb(253, 100, 129);
+      color: rgb(253, 100, 129);
+      padding: 1rpx;
+      box-sizing: border-box;
+      margin: 0 3rpx;
+    }
+  }
+  &:nth-child(4) {
+    display: flex;
+    margin-top: 10rpx;
+    align-items: center;
+    span:nth-child(1) {
+      font-size: 13px;
+      color: red;
+    }
+    span:nth-child(2) {
+      font-size: 12px;
+      color: #777;
+      text-decoration: line-through;
+      margin: 0 10rpx;
+    }
+    img {
+      width: 40rpx;
+      height: 40rpx;
+    }
   }
 }
 .active {
