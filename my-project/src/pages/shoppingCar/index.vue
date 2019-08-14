@@ -8,18 +8,20 @@
 
 <template>
   <!-- 购物车页面 -->
-  <div class="shoppingCarWrap">
+
+  <div class="shoppingCarWrap" v-if="productDetails">
     <div class="shoppingCarMain">
       <!-- 购物车轮播 -->
       <div class="shoppingCarSwiper">
-        <Swiper :images="images"></Swiper>
+        <img :src="productDetails.mainImgUrl" alt />
+        <!-- <Swiper :images="images"></Swiper> -->
       </div>
       <!-- 购物车商品介绍 -->
       <div class="shoppingCarCost">
         <div>
           <p>
             <span>￥</span>
-            <span>22.9</span>
+            <span>{{productDetails.salesPrice}}</span>
           </p>
           <p>
             <span>￥</span>
@@ -33,20 +35,21 @@
         <div>
           <p>
             <span>市场价</span>
-            <span class="shoppingDel">22.9</span>
+            <span class="shoppingDel">{{productDetails.marketPrice}}</span>
           </p>
           <p>
             <span>自提价</span>
             <span>$</span>
-            <span>18.88</span>
+            <span>{{productDetails.supplyPrice}}</span>
           </p>
         </div>
-        <div>帮宝适啦啦库加大号XL128超薄透气婴儿纸尿裤非纸片</div>
+        <div>{{productDetails.title}}</div>
         <div>
           <p>快递包邮</p>
           <p>
             仅剩
-            <span>123</span>件
+            <span>123</span>
+            {{productDetails.unitMeasureValue}}
           </p>
         </div>
       </div>
@@ -77,11 +80,13 @@
         </div>
         <div id="shoppingText">
           <p>提示</p>
-          <p>地区快递暂停，四川连山,阿坝,杆子地区桑快递暂停发</p>
+          <p>{{productDetails.description?productDetails.description:'24小时之内发货'}}</p>
         </div>
       </div>
       <!-- 购物车商品图片 -->
-      <div class="shoppingCarBanner"></div>
+      <div class="shoppingCarBanner">
+        <img :src="productDetails.shareUrl" alt />
+      </div>
       <!-- 购物车商品相关商品-->
       <div class="shoppingCarReferrer">
         <div>
@@ -228,17 +233,28 @@ export default {
     };
   },
 
-  computed: {},
+  computed: {
+    ...mapState({
+      productDetails: state => state.shoppingCar.productDetails
+    })
+  },
   methods: {
     ...mapActions({
-      cartList: "shoppingCar/cartList"
+      cartList: "shoppingCar/cartList",
+      detailPicture:"shoppingCar/detailPicture"
     })
   },
   created() {},
   mounted() {
-    this.cartList({
-     pid:50960
+    this.cartList({ //商品详情
+      pid: 18
     });
+    this.detailPicture({ // 只有两张图片
+      pid:28,
+      bid:13053,
+      uid:20,
+      usiid:null
+    })
   },
   onLoad() {
     wx.setNavigationBarTitle({
@@ -323,16 +339,18 @@ export default {
   }
   div:nth-child(3) {
     margin-top: 10rpx;
-    font-size: 19px;
-    padding: 0 0 0 10rpx;
+    font-size: 16px;
+    padding: 8rpx 8rpx 0 8rpx;
+    flex: 1;
   }
   div:nth-child(4) {
+    height: 60rpx;
+    line-height: 20rpx;
     display: flex;
     padding: 0 0 0 10rpx;
     font-size: 11px;
     justify-content: space-between;
     color: #999;
-    margin-top: 8rpx;
   }
 }
 .shoppingCarSpecil {
@@ -399,7 +417,6 @@ export default {
 .shoppingCarBanner {
   display: flex;
   flex: 1;
-  border: 1px solid red;
 }
 .shoppingCarReferrer {
   display: flex;
