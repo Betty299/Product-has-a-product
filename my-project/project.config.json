@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -68,6 +68,20 @@
 					"id": -1,
 					"name": "邀请码页",
 					"pathName": "pages/login/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/shoppingCar/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "canvas",
+					"pathName": "pages/toCanvas/main",
 					"scene": null
 				}
 			]

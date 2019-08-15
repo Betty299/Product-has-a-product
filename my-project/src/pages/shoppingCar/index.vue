@@ -28,7 +28,7 @@
               <img src="../../../static/images/vip.png" alt />
             </span>
           </p>
-          <p>分享赚:$499.00</p>
+          <p @click="canvasToimg">分享赚:$499.00</p>
         </div>
         <div>
           <p>
@@ -228,7 +228,13 @@ export default {
   },
 
   computed: {},
-  methods: {},
+  methods: {
+    canvasToimg(){
+      wx.navigateTo({
+        url:"/pages/toCanvas/main"
+      })
+    }
+  },
   created() {},
   mounted() {},
   onLoad() {

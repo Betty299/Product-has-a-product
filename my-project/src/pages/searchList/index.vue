@@ -70,8 +70,14 @@ export default {
   computed: {
     
   },
-  
-  created() {},
+  methods: {
+    ...mapActions({
+      getdetail:"search/getdetail"
+    })
+  },
+  created() {
+    this.getdetail({'pid':11})
+  },
   mounted() {}
 };
 </script>
