@@ -8,12 +8,12 @@
 
 <template>
   <!-- 购物车商品页面 -->
-  <!--  403 下面的注释解开就有数据  v-if="productDetails" -->
-  <div class="shoppingCarWrap">
+
+  <div v-if="productDetails" class="shoppingCarWrap">
     <div class="shoppingCarMain">
       <!-- 购物车轮播 -->
       <div class="shoppingCarSwiper">
-        <!-- <img :src="productDetails.mainImgUrl" alt /> -->
+        <img :src="productDetails.mainImgUrl" alt />
         <!-- <Swiper :images="images"></Swiper> -->
       </div>
       <!-- 购物车商品介绍 -->
@@ -21,7 +21,7 @@
         <div>
           <p>
             <span>￥</span>
-            <!-- <span>{{productDetails.salesPrice}}</span> -->
+            <span>{{productDetails.salesPrice}}</span>
           </p>
           <p>
             <span>￥</span>
@@ -38,21 +38,21 @@
         <div>
           <p>
             <span>市场价</span>
-            <!-- <span class="shoppingDel">{{productDetails.marketPrice}}</span> -->
+            <span class="shoppingDel">{{productDetails.marketPrice}}</span>
           </p>
           <p>
             <span>自提价</span>
             <span>$</span>
-            <!-- <span>{{productDetails.supplyPrice}}</span> -->
+            <span>{{productDetails.supplyPrice}}</span>
           </p>
         </div>
-        <!-- <div>{{productDetails.title}}</div> -->
+        <div>{{productDetails.title}}</div>
         <div>
           <p>快递包邮</p>
           <p>
             仅剩
             <span>123</span>
-            <!-- {{productDetails.unitMeasureValue}} -->
+            {{productDetails.unitMeasureValue?productDetails.unitMeasureValue:'件'}}
           </p>
         </div>
       </div>
@@ -83,12 +83,12 @@
         </div>
         <div id="shoppingText">
           <p>提示</p>
-          <!-- <p>{{productDetails.description?productDetails.description:'24小时之内发货'}}</p> -->
+          <p>{{productDetails.description?productDetails.description:'24小时之内发货'}}</p>
         </div>
       </div>
       <!-- 购物车商品图片 -->
       <div class="shoppingCarBanner" v-for="item in productSrc" :key="item.id">
-        <!-- <img :src="item.imgUrl" alt /> -->
+        <img :src="item.imgUrl" alt />
       </div>
       <!-- 购物车商品相关商品-->
       <div class="shoppingCarReferrer">
@@ -149,7 +149,9 @@
         </div>
         <div>
           <dl>
-            <dt></dt>
+            <dt>
+              <img :src="productDetails.mainImgUrl" alt />
+            </dt>
             <dd>
               <p>￥399.50</p>
               <p>
@@ -251,25 +253,25 @@ export default {
     })
   },
   created() {},
-  // mounted() {
-  //   this.cartList({
-  //     //商品详情
-  //     pid: 18
-  //   });
-  //   this.detailPicture({
-  //     // 只有两张图片
-  //     pid: 18,
-  //     bid: 13053,
-  //     uid: 20,
-  //     usiid: null
-  //   }),
-  //     this.productDetail({
-  //       // 产品详情图 分为0用户 1店主 2供货商
-  //       pid: 18,
-  //       basePid: 18,
-  //       userIdentity: 0
-  //     });
-  // },
+  mounted() {
+    this.cartList({
+      //商品详情
+      pid: 18
+    });
+    this.detailPicture({
+      // 只有两张图片
+      pid: 18,
+      bid: 13053,
+      uid: 20,
+      usiid: null
+    }),
+      this.productDetail({
+        // 产品详情图 分为0用户 1店主 2供货商
+        pid: 18,
+        basePid: 18,
+        userIdentity: 0
+      });
+  },
   onLoad() {
     wx.setNavigationBarTitle({
       title: "商品详情"
