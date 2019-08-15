@@ -129,7 +129,7 @@ export default {
 .shoppingBlock {
   margin: 0 auto;
   box-sizing: border-box;
-  height: 270rpx;
+  height: 230rpx;
   width: 95%;
   display: flex;
   flex: 1;
@@ -139,13 +139,14 @@ export default {
     align-items: center;
     justify-content: center;
     display: flex;
+        margin-top: 15rpx;
     width: 15%;
   }
   & > div:nth-child(2) {
     display: flex;
     height: 80%;
     width: 25%;
-    margin-top: 25rpx;
+    margin-top: 32rpx;
     img {
       height: 100%;
     }
@@ -275,6 +276,7 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     width: 100%;
+    margin-top:16rpx; 
     text-overflow: ellipsis;
     overflow: hidden;
   }
@@ -293,7 +295,7 @@ export default {
     }
   }
   &:nth-child(3) {
-    margin-top: 10rpx;
+    margin-top: 20rpx;
     display: flex;
     span {
       font-size: 10px;
@@ -306,7 +308,7 @@ export default {
   }
   &:nth-child(4) {
     display: flex;
-    margin-top: 10rpx;
+    margin-top: 20rpx;
     align-items: center;
     span:nth-child(1) {
       font-size: 13px;

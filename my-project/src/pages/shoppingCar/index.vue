@@ -25,7 +25,7 @@
           </p>
           <p>
             <span>￥</span>
-            <span>18.88</span>
+            <span>{{productDetails.vipPrice}}</span>
             <span>
               <img src="../../../static/images/vip.png" alt />
             </span>
@@ -219,7 +219,7 @@ export default {
   mounted() {
     this.cartList({
       //商品详情
-      pid: 18
+      pid: this.merchandise.pid
     });
     this.detailPicture({
       // 只有两张图片
@@ -230,17 +230,17 @@ export default {
     }),
       this.productDetail({
         // 产品详情图 分为0用户 1店主 2供货商
-        pid: 18,
-        basePid: 18,
+        pid: this.merchandise.pid,
+        basePid: this.merchandise.basePid,
         userIdentity: 0
       }),
       this.recommend({
         //热商品
-        title: "美白"
+        title:this.merchandise.title
       });
   },
   onLoad(options) {
-    JSON.parse(options.item) =this.merchandise   //传入商品参数
+    this.merchandise= JSON.parse(options.item)   //传入商品参数
     console.log(this.merchandise);
     wx.setNavigationBarTitle({
       title: "商品详情"
