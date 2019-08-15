@@ -96,43 +96,13 @@
           <img src="../../../static/images/text_1.png" alt />
         </div>
         <div class="shoppingCarList">
-          <dl>
-            <dt>图片</dt>
+          <dl v-for="item in relaShopping" :key="item.id">
+            <dt>
+              <img :src="item.mainImgUrl" alt />
+            </dt>
             <dd>
-              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
-              <span>￥1999</span>
-            </dd>
-          </dl>
-
-          <dl>
-            <dt>图片</dt>
-            <dd>
-              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
-              <span>￥1999</span>
-            </dd>
-          </dl>
-
-          <dl>
-            <dt>图片</dt>
-            <dd>
-              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
-              <span>￥1999</span>
-            </dd>
-          </dl>
-
-          <dl>
-            <dt>图片</dt>
-            <dd>
-              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
-              <span>￥1999</span>
-            </dd>
-          </dl>
-
-          <dl>
-            <dt></dt>
-            <dd>
-              <span>泰国制造天然啊实打实乳胶床垫5cm标记</span>
-              <span>￥1999</span>
+              <span>{{item.description?item.description:item.title}}</span>
+              <span>￥{{item.marketPrice}}</span>
             </dd>
           </dl>
         </div>
@@ -153,10 +123,10 @@
               <img :src="productDetails.mainImgUrl" alt />
             </dt>
             <dd>
-              <p>￥399.50</p>
+              <p>￥{{productDetails.salesPrice}}</p>
               <p>
                 库存:
-                <span>4999</span>
+                <span>399</span>
               </p>
             </dd>
           </dl>
@@ -222,18 +192,7 @@ export default {
     Swiper
   },
   data() {
-    return {
-      images: [
-        {
-          url:
-            "https://img-oss.yunshanmeicai.com/goods/default/31d8dfa4-0d7b-4694-80f9-41b07c9d0a3a.png"
-        },
-        {
-          url:
-            "https://img-oss.yunshanmeicai.com/goods/default/e83c8f0f-4acc-4729-bcbb-294f2b314977.jpg"
-        }
-      ]
-    };
+    return {};
   },
 
   computed: {
@@ -241,7 +200,8 @@ export default {
       productDetails: state => state.shoppingCar.productDetails,
       productSrc: state => state.shoppingCar.productSrc,
       couponPops: state => state.shoppingCar.couponPop,
-      colorPops: state => state.shoppingCar.colorPop
+      colorPops: state => state.shoppingCar.colorPop,
+      relaShopping: state => state.shoppingCar.relaShopping
     })
   },
   methods: {
@@ -249,7 +209,8 @@ export default {
     ...mapActions({
       cartList: "shoppingCar/cartList",
       detailPicture: "shoppingCar/detailPicture",
-      productDetail: "shoppingCar/productDetail"
+      productDetail: "shoppingCar/productDetail",
+      recommend: "shoppingCar/recommend"
     })
   },
   created() {},
@@ -270,6 +231,10 @@ export default {
         pid: 18,
         basePid: 18,
         userIdentity: 0
+      }),
+      this.recommend({
+        //热商品
+        title: "美白"
       });
   },
   onLoad() {
@@ -394,12 +359,12 @@ export default {
   display: flex;
   flex-wrap: wrap;
   dl {
-    width: 30%;
+    width: 45%;
     height: 360rpx;
     display: flex;
     flex-direction: column;
     padding: 0 10rpx;
-    margin-top: 6rpx;
+    margin-top: 15rpx;
     dt {
       height: 70%;
     }

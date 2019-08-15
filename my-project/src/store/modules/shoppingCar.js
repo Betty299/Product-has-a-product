@@ -1,9 +1,10 @@
-import { cartList, detailPicture, productDetailPicture } from '../../service/index'
+import { cartList, detailPicture, productDetailPicture,recommend } from '../../service/index'
 const state = {
   productDetails: null, // 商品详情
   productSrc: null, // 产品详情图
   colorPop: false, //  加入购物车选择颜色弹框
-  couponPop: false // 优惠卷弹框
+  couponPop: false, // 优惠卷弹框
+  relaShopping: [] // 相关商品
 }
 const mutations = {
   productDetails (state, payload) {
@@ -18,6 +19,9 @@ const mutations = {
   },
   couponPop (state) { // 优惠卷弹框
     state.couponPop = !state.couponPop
+  },
+  relaShopping (state, payload) { // 相关商品与热门商品
+    state.relaShopping = payload
   }
 }
 // 模块内的异步改变
@@ -36,6 +40,11 @@ const actions = {
   async productDetail (context, { ...payload }) { // 产品详情图 ok
     let data = await productDetailPicture(payload)
     context.commit('productSrc', data.result)
+  },
+  async recommend (context, { ...payload }) { // 商品推荐和猜你喜欢
+    let data = await recommend(payload)
+    context.commit('relaShopping', data.result)
+    console.log(data)
   }
 }
 export default {

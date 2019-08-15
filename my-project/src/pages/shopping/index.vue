@@ -18,52 +18,20 @@
         <img src="../../../static/images/猜你喜欢.png" alt />
       </div>
       <div>
-        <div class="contentBox">
+        <div class="contentBox" v-for="item in relaShopping" :key="item.id">
           <div>
-            <img src="/static/images/2.png" alt />
+            <img :src="item.mainImgUrl" alt />
           </div>
-          <div>[放电饭煲上岛咖啡]</div>
+          <div>{{item.description?item.description:item.title}}</div>
           <div>
             <span>包税</span>
-            <span>满减299减30</span>
+            <span>{{item.country?item.country:item.origin}}</span>
             <span>满299减30</span>
           </div>
           <div>
-            <span>￥22.90</span>
-            <span>￥18.88</span>
-            <img src="/static/images/黑卡.svg" alt />
-          </div>
-        </div>
-        <div class="contentBox">
-          <div>
-            <img src="/static/images/2.png" alt />
-          </div>
-          <div>[放电饭煲上岛咖啡]</div>
-          <div>
-            <span>包税</span>
-            <span>满减299减30</span>
-            <span>满299减30</span>
-          </div>
-          <div>
-            <span>￥22.90</span>
-            <span>￥18.88</span>
-            <img src="/static/images/黑卡.svg" alt />
-          </div>
-        </div>
-        <div class="contentBox">
-          <div>
-            <img src="/static/images/2.png" alt />
-          </div>
-          <div>[放电饭煲上岛咖啡]</div>
-          <div>
-            <span>包税</span>
-            <span>满减299减30</span>
-            <span>满299减30</span>
-          </div>
-          <div>
-            <span>￥22.90</span>
-            <span>￥18.88</span>
-            <img src="/static/images/黑卡.svg" alt />
+            <span>￥{{item.earnMoney}}</span>
+            <span>￥{{item.vipPrice}}</span>
+            <!-- <img src="/static/images/黑卡.svg" alt /> -->
           </div>
         </div>
       </div>
@@ -117,13 +85,22 @@ export default {
   },
 
   computed: {
-    ...mapState({})
+    ...mapState({
+      relaShopping: state => state.shoppingCar.relaShopping
+    })
   },
   methods: {
-    ...mapActions({})
+    ...mapActions({
+      recommend: "shoppingCar/recommend"
+    })
   },
   created() {},
-  mounted() {},
+  mounted() {
+    //热门商品
+    this.recommend({
+      title: ""
+    });
+  },
   onLoad() {
     wx.setNavigationBarTitle({
       title: "购物车"
@@ -279,7 +256,7 @@ export default {
 }
 .contentBox {
   width: 48%;
-  height: 460rpx;
+  height: 540rpx;
   padding: 3rpx 20rpx;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -287,6 +264,14 @@ export default {
   border-radius: 5rpx;
   margin: 5rpx 0;
   margin-left: 8rpx;
+  div:nth-child(2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 .contentBox div {
   font-size: 16px;

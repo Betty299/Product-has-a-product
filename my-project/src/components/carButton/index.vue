@@ -39,12 +39,14 @@ export default {
   width: 100%;
   display: flex;
   height: 110rpx;
-
   div:nth-child(1) {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 200rpx;
+    p:nth-child(1){
+      margin-top:8rpx; 
+    }
   }
   div:nth-child(2) {
     flex: 1;
