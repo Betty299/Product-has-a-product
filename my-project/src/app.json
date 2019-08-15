@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/canvas/main",
-    "pages/shoppingCar/main",
     "pages/index/main",
+    "pages/canvas/main",
+    "pages/shopping/main",
+    "pages/shoppingCar/main",
     "pages/mine/main",
     "pages/name/main",
     "pages/discounts/main",
@@ -15,8 +16,8 @@
     "pages/favorite/main",
     "pages/setting/main",
     "pages/shoppingList/main",
-    "pages/search/main",
-    "pages/shopping/main"
+    "pages/search/main"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

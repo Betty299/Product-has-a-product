@@ -235,7 +235,7 @@ export default {
       ]
     };
   },
-
+  
   computed: {
     ...mapState({
       productDetails: state => state.shoppingCar.productDetails,
@@ -272,7 +272,8 @@ export default {
         userIdentity: 0
       });
   },
-  onLoad() {
+  onLoad(options) {
+    console.log(options)
     wx.setNavigationBarTitle({
       title: "商品详情"
     });
