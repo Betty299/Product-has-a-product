@@ -18,7 +18,7 @@
         <img src="../../../static/images/猜你喜欢.png" alt />
       </div>
       <div>
-        <div class="contentBox" v-for="item in relaShopping" :key="item.id">
+        <div class="contentBox" v-for="item in relaShopping" :key="item.id" @click="goShop(item)">
           <div>
             <img :src="item.mainImgUrl" alt />
           </div>
@@ -92,7 +92,13 @@ export default {
   methods: {
     ...mapActions({
       recommend: "shoppingCar/recommend"
-    })
+    }),
+    goShop(item) {
+      //点击商品跳转购物车
+      wx.navigateTo({
+        url: "/pages/shoppingCar/main?item=" + JSON.stringify(item)
+      });
+    }
   },
   created() {},
   mounted() {

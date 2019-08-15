@@ -192,7 +192,9 @@ export default {
     Swiper
   },
   data() {
-    return {};
+    return {
+      merchandise: null //商品信息（需要传入接口）
+    };
   },
 
   computed: {
@@ -237,7 +239,9 @@ export default {
         title: "美白"
       });
   },
-  onLoad() {
+  onLoad(options) {
+    JSON.parse(options.item) =this.merchandise   //传入商品参数
+    console.log(this.merchandise);
     wx.setNavigationBarTitle({
       title: "商品详情"
     });
