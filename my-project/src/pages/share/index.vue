@@ -62,7 +62,7 @@ export default {
     };
     var context = wx.createCanvasContext("canvas");
     context.rect(0, 0, 372, 450);
-    context.drawImage(userInfo.avatar, 0, 0, 40, 40, 20, 12, 40, 40);
+    context.drawImage("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=400062461,2874561526&fm=26&gp=0.jpg", 0, 0, 40, 40, 20, 12, 40, 40);
     context.save();
     context.setFontSize(14);
     context.setFillStyle("#76a9fd");
