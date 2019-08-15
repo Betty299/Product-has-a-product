@@ -30,10 +30,14 @@
               <img src="../../../static/images/vip.png" alt />
             </span>
           </p>
+<<<<<<< HEAD
           <!-- 点击跳转canvas -->
           <p>
             <navigator url="/pages/canvas/main">分享赚:$499.00</navigator>
           </p>
+=======
+          <p @click="canvasToimg">分享赚:$499.00</p>
+>>>>>>> whp
         </div>
         <div>
           <p>
@@ -250,7 +254,12 @@ export default {
       cartList: "shoppingCar/cartList",
       detailPicture: "shoppingCar/detailPicture",
       productDetail: "shoppingCar/productDetail"
-    })
+    }),
+    canvasToimg(){
+      wx.navigateTo({
+        url:"/pages/toCanvas/main"
+      })
+    }
   },
   created() {},
   mounted() {
