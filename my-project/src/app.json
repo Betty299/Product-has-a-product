@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/main",
     "pages/share/main",
     "pages/name/main",
     "pages/mine/main",
@@ -7,7 +8,6 @@
     "pages/goods/main",
     "pages/address/main",
     "pages/relation/main",
-    "pages/index/main",
     "pages/home/main",
     "pages/shoppingCar/main",
     "pages/submitOrder/main",
