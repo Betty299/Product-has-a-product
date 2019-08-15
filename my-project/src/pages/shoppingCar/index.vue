@@ -30,8 +30,7 @@
               <img src="../../../static/images/vip.png" alt />
             </span>
           </p>
-          <!-- 点击跳转canvas -->
-          <p @click="goNav(productDetails)">分享赚:$499.00</p>
+          <p @click="canvasToimg">分享赚:$499.00</p>
         </div>
         <div>
           <p>
@@ -194,7 +193,7 @@ export default {
       merchandise: null //商品信息（需要传入接口）
     };
   },
-
+  
   computed: {
     ...mapState({
       productDetails: state => state.shoppingCar.productDetails,
@@ -210,13 +209,12 @@ export default {
     ...mapActions({
       cartList: "shoppingCar/cartList",
       detailPicture: "shoppingCar/detailPicture",
-      productDetail: "shoppingCar/productDetail",
-      recommend: "shoppingCar/recommend"
+      productDetail: "shoppingCar/productDetail"
     }),
-    goNav(item) {
+    canvasToimg(){
       wx.navigateTo({
-        url: '/pages/canvas/main?item=' + JSON.stringify(item)
-      });
+        url:"/pages/toCanvas/main"
+      })
     }
   },
   created() {},
