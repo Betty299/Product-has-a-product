@@ -30,7 +30,10 @@
               <img src="../../../static/images/vip.png" alt />
             </span>
           </p>
-          <p>分享赚:$499.00</p>
+          <!-- 点击跳转canvas -->
+          <p>
+            <navigator url="/pages/canvas/main">分享赚:$499.00</navigator>
+          </p>
         </div>
         <div>
           <p>
