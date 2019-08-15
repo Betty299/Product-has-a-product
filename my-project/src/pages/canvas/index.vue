@@ -4,7 +4,7 @@
     <span>[在售价]139元</span>
     <canvas style="width: 372px;height: 450px;" canvas-id="canvas"></canvas>
     <footer>
-      <dl>
+      <dl @click="photo">
         <dt>
           <img src="/static/images/6.png" alt>
         </dt>
@@ -27,7 +27,33 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+      photo(){
+            wx.showLoading({
+                title: '分享图片生成中',
+            })
+            setTimeout(()=>{
+            wx.canvasToTempFilePath({
+                fileType:"jpg",
+                width:375,
+                height:600,
+                x:0,
+                y:0,
+                canvasId:"canvas",
+                success:res=>{
+                    wx.saveImageToPhotosAlbum({
+                        filePath:res.tempFilePath,
+                        success:(res)=>{
+                        console.log(res);
+                        wx.hideLoading();
+                        }
+                    })
+                }
+            })
+            },5000)
+           
+      }
+  },
   created() {},
   mounted() {
     const userInfo = {
@@ -80,11 +106,11 @@ export default {
         });
       }
     });
-    const qrCode = "https://upapi.jinaup.com/static/image/QRCode.png";
+    //  const qrCode = "https://upapi.jinaup.com/static/image/QRCode.png";
     context.save();
     context.setFontSize(15);
     context.restore();
-    context.drawImage(qrCode, 0, 0, 500, 500, 200, 330, 100, 100);
+    context.drawImage("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565880615640&di=4e0903399c9ee15c39b3547ae1422fa9&imgtype=0&src=http%3A%2F%2Fimg3.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp127466046.jpg", 0, 0, 500, 500, 200, 330, 100, 100);
     context.save();
     context.setFontSize(16);
     context.setFillStyle("#000");
