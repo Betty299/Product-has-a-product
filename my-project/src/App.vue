@@ -9,7 +9,7 @@ export default {
      * 百度：mpvue === swan, mpvuePlatform === 'swan'
      * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
      */
-
+    
     let logs
     if (mpvuePlatform === 'my') {
       logs = mpvue.getStorageSync({key: 'logs'}).data || []
@@ -23,10 +23,26 @@ export default {
       logs.unshift(Date.now())
       mpvue.setStorageSync('logs', logs)
     }
+    // wx.login({
+    //   success (res) {
+    //     if (res.code) {
+    //       //发起网络请求
+    //       wx.request({
+    //         url: 'https://test.com/onLogin',
+    //         data: {
+    //           code: res.code
+    //         }
+    //       })
+    //     } else {
+    //       console.log('登录失败！' + res.errMsg)
+    //     }
+    //   }
+    // })
   },
   log () {
     console.log(`log at:${Date.now()}`)
   }
+  
 }
 </script>
 

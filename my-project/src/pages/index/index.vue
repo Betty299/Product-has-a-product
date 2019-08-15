@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="search" >
-      <input placeholder="搜索" disabled/>
+      <input placeholder="搜索" @click="toSearch"/>
     </div>
     <nav class="_scroll" >
       <li class="_li active">今日推荐</li>
@@ -173,7 +173,12 @@ export default {
   methods: {
      ...mapActions({
       getshouyelistone:"shouye/shouyeone"
-    })
+    }),
+    toSearch(){//去搜索
+      wx.navigateTo({
+        url: '/pages/search/main'
+      });
+    }
   },
   created() {
     this.getshouyelistone()

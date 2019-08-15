@@ -1,6 +1,6 @@
 <template>
   <div class="lists" >
-    <div class="content" v-for="(item,index) in list"  :key="index">
+    <div class="content"  @click="bindtoshoopcar(index)" v-for="(item,index) in list"  :key="index">
       <div class="img">
         <img
           :src="item.productVo.mainImgUrl"
@@ -31,7 +31,7 @@ export default {
   components: {},
   data() {
     return {
-
+address:[]
     };
   },
   computed: {
@@ -43,7 +43,15 @@ export default {
     
     ...mapActions({
       getshouyelist:"shouye/shouyelist"
-    })
+    }),
+       bindtoshoopcar(index){
+         console.log(index)
+         this.address=index
+      
+        wx.navigateTo({
+          url:"/pages/shoppingCar/main?lists="+this.address
+        })
+      },
   },
   created() {
    

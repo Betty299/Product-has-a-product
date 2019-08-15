@@ -7,9 +7,9 @@
  -->
 
 <template>
-  <!-- 购物车页面 -->
+  <!-- 购物车商品页面 -->
 
-  <div class="shoppingCarWrap" v-if="productDetails">
+  <div v-if="productDetails" class="shoppingCarWrap">
     <div class="shoppingCarMain">
       <!-- 购物车轮播 -->
       <div class="shoppingCarSwiper">
@@ -30,7 +30,7 @@
               <img src="../../../static/images/vip.png" alt />
             </span>
           </p>
-          <p>分享赚:$499.00</p>
+          <p @click="canvasToimg">分享赚:$499.00</p>
         </div>
         <div>
           <p>
@@ -49,7 +49,7 @@
           <p>
             仅剩
             <span>123</span>
-            {{productDetails.unitMeasureValue}}
+            {{productDetails.unitMeasureValue?productDetails.unitMeasureValue:'件'}}
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@
             <span class="pink Ml">满99减20</span>
             <span class="pink Ml">满199减20</span>
           </p>
-          <p>></p>
+          <p @click="couponPop()">></p>
         </div>
         <div>
           <p>说明</p>
@@ -138,15 +138,17 @@
     <!-- 购物车商品添加按钮 -->
     <Button />
     <!-- 选择颜色尺寸弹框 -->
-    <div v-if="colorPop" class="shoppingSize">
+    <div v-if="colorPops" class="shoppingSize">
       <div class="citySize">
         <div>
           <p>颜色,尺寸</p>
-          <p>X</p>
+          <p @click="colorPop()">X</p>
         </div>
         <div>
           <dl>
-            <dt></dt>
+            <dt>
+              <img :src="productDetails.mainImgUrl" alt />
+            </dt>
             <dd>
               <p>￥399.50</p>
               <p>
@@ -187,11 +189,11 @@
             <span>+</span>
           </p>
         </div>
-        <div>确定</div>
+        <div @click="colorPop()">确定</div>
       </div>
     </div>
     <!-- 优惠卷弹框 -->
-    <div v-if="couponPop" class="shoppingCoupon">
+    <div v-if="couponPops" class="shoppingCoupon">
       <div class="cityCoupon">
         <h5>优惠卷</h5>
         <div>可领取优惠卷</div>
@@ -199,7 +201,7 @@
           <Coupon></Coupon>
           <Coupon></Coupon>
         </div>
-        <div>完成</div>
+        <div @click="couponPop()">完成</div>
       </div>
     </div>
   </div>
@@ -208,7 +210,7 @@
 import Button from "../../components/carButton";
 import Coupon from "../../components/coupon";
 import Swiper from "../../components/Swiper";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapMutations, mapState } from "vuex";
 export default {
   props: {},
   components: {
@@ -218,8 +220,6 @@ export default {
   },
   data() {
     return {
-      colorPop: false,
-      couponPop: false,
       images: [
         {
           url:
@@ -232,19 +232,27 @@ export default {
       ]
     };
   },
-
+  
   computed: {
     ...mapState({
       productDetails: state => state.shoppingCar.productDetails,
-      productSrc: state => state.shoppingCar.productSrc
+      productSrc: state => state.shoppingCar.productSrc,
+      couponPops: state => state.shoppingCar.couponPop,
+      colorPops: state => state.shoppingCar.colorPop
     })
   },
   methods: {
+    ...mapMutations("shoppingCar", ["couponPop", "colorPop"]), //调用同步的显示隐藏
     ...mapActions({
       cartList: "shoppingCar/cartList",
       detailPicture: "shoppingCar/detailPicture",
       productDetail: "shoppingCar/productDetail"
-    })
+    }),
+    canvasToimg(){
+      wx.navigateTo({
+        url:"/pages/toCanvas/main"
+      })
+    }
   },
   created() {},
   mounted() {
@@ -266,7 +274,8 @@ export default {
         userIdentity: 0
       });
   },
-  onLoad() {
+  onLoad(options) {
+    console.log(options)
     wx.setNavigationBarTitle({
       title: "商品详情"
     });
@@ -429,7 +438,7 @@ export default {
   flex-direction: column;
   flex: 1;
   img {
-    height:450rpx;
+    height: 450rpx;
   }
 }
 .shoppingCarReferrer {
@@ -498,7 +507,6 @@ img {
       width: 100%;
       display: flex;
       dt {
-        background: red;
         width: 30%;
       }
       dd {
@@ -630,8 +638,8 @@ img {
       text-align: center;
       background: linear-gradient(
         to right,
-        rgb(255, 0, 212),
-        rgb(167, 40, 139)
+        rgb(251, 37, 211),
+        rgb(248, 99, 103)
       ); /* 标准的语法 */
     }
   }

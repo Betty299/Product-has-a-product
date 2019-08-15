@@ -1,6 +1,6 @@
 <template>
   <div class="aa">
-    <div class="dl">
+    <div class="dl"  @click="bindtoshoopcar">
       <div class="dt">
         <img
           src="https://jnup.oss-cn-beijing.aliyuncs.com/web/uploads/image/store_1/f957bc59e14afd4f251d79ce086d5d0270bb13c6.jpg?x-oss-process=style/small"
@@ -27,7 +27,12 @@ export default {
   methods: {
     ...mapActions({
       getshouyelisthaowu:"shouye/shouyehaowu"
-    })
+    }),
+     bindtoshoopcar(){
+        wx.navigateTo({
+          url:"/pages/shoppingCar/main"
+        })
+      },
   },
   created() {
     this.getshouyelisthaowu()

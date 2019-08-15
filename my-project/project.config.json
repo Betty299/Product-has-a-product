@@ -5,12 +5,21 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": false,
+		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"checkInvalidKey": true
+		"coverView": true,
+		"autoAudits": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enhance": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
@@ -41,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -54,6 +63,39 @@
 					"id": -1,
 					"name": "submitOrder",
 					"pathName": "pages/submitOrder/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "shoppingCar",
+					"pathName": "pages/shoppingCar/main",
+					"name": "邀请码页",
+					"pathName": "pages/login/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "shopping",
+					"pathName": "pages/shopping/main",
+					"name": "商品详情",
+					"pathName": "pages/shoppingCar/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "canvas",
+					"pathName": "pages/canvas/main",
+					"pathName": "pages/toCanvas/main",
 					"scene": null
 				}
 			]
