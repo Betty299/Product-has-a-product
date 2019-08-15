@@ -15,7 +15,7 @@ export function shouyehaowu() {
     return fly.post("/api/open/page/home/list/category")
 }
 
-//首页数据2
-export function shouyelist() {
-  return fly.post("/api/open/page/home/products/1.0.0")
-}
+// //首页数据2
+// export function shouyelist() {
+//   return fly.post("/api/open/page/home/products/1.0.0")
+// }
