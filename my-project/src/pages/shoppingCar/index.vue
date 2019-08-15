@@ -31,9 +31,7 @@
             </span>
           </p>
           <!-- 点击跳转canvas -->
-          <p>
-            <navigator url="/pages/canvas/main">分享赚:$499.00</navigator>
-          </p>
+          <p @click="goNav(productDetails)">分享赚:$499.00</p>
         </div>
         <div>
           <p>
@@ -206,6 +204,7 @@ export default {
       relaShopping: state => state.shoppingCar.relaShopping
     })
   },
+
   methods: {
     ...mapMutations("shoppingCar", ["couponPop", "colorPop"]), //调用同步的显示隐藏
     ...mapActions({
@@ -213,7 +212,12 @@ export default {
       detailPicture: "shoppingCar/detailPicture",
       productDetail: "shoppingCar/productDetail",
       recommend: "shoppingCar/recommend"
-    })
+    }),
+    goNav(item) {
+      wx.navigateTo({
+        url: '/pages/canvas/main?item=' + JSON.stringify(item)
+      });
+    }
   },
   created() {},
   mounted() {
@@ -236,11 +240,12 @@ export default {
       }),
       this.recommend({
         //热商品
-        title:this.merchandise.title
+        title: this.merchandise.title
       });
   },
+
   onLoad(options) {
-    this.merchandise= JSON.parse(options.item)   //传入商品参数
+    this.merchandise = JSON.parse(options.item); //传入商品参数
     console.log(this.merchandise);
     wx.setNavigationBarTitle({
       title: "商品详情"

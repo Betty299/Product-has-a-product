@@ -193,54 +193,52 @@ export default {
     // 开始绘制分享图片
     // 1.获取实例
     var context = wx.createCanvasContext("share");
-
     // 2.绘制头像和昵称
     context.drawImage(this.userInfo.avtar, 0, 0, 800, 800, 20, 33, 37.5, 37.5);
     context.save();
-
     context.setFillStyle("#5D9AFC");
     context.setFontSize(14);
     context.fillText(this.userInfo.nickName, 72, 43);
-
     context.setFillStyle("#000");
     context.fillText(
       "分享给你一个商品",
       72 + context.measureText(this.userInfo.nickName).width,
       43
     );
-
     context.fillText(`邀请码: ${this.userInfo.code}`, 72, 66);
-
     // 3.绘制商品详情
     context.restore();
     context.drawImage(this.info.mainImgUrl, 0, 0, 800, 800, 20, 100, 352, 318);
-
     context.save();
     context.setFillStyle("black");
     context.setFontSize(18);
     // context.fillText(this.info.title, 16, 520);
     // 计算多行文本，自动换行
+    console.log(this.info.shortTitle.length);
     let row = 0,
       pos = 0;
-    for (let i = 0; i < this.info.title.length; i++) {
-      let str = this.info.title.slice(pos, i);
+    for (let index = 0; index < this.info.shortTitle.length; index++) {
+      let str = this.info.shortTitle.slice(pos, index);
       if (
-        context.measureText(str).width > 266 &&
-        context.measureText(str).width < 280
+        context.measureText(str).width > 366 &&
+        context.measureText(str).width < 460
       ) {
-        context.fillText(this.info.title.slice(pos, i), 16, 420 + 15 * row);
+        context.fillText(
+          this.info.shortTitle.slice(pos, index),
+          20,
+          420 + 20 * row
+        );
         row++;
-        pos = i;
+        pos = index;
       }
     }
-    if (pos < this.info.title.length) {
+    if (pos < this.info.shortTitle.length) {
       context.fillText(
-        this.info.title.slice(pos, this.info.title.length),
-        16,
+        this.info.title.slice(pos, this.info.shortTitle.length),
+        20,
         420 + 15 * row
       );
     }
-    context.restore();
     // 4.绘制二维码
     context.save();
     context.setFillStyle("#ccc");
@@ -269,8 +267,58 @@ export default {
     context.setFontSize(13);
     context.setFillStyle("#999");
     // info.result.marketPrice = '88888.888888';
-    context.fillText(`￥${this.info.marketPrice}`,40+context.measureText(`￥${this.info.marketPrice}`).width, 510);
+    context.fillText(
+      `￥${this.info.marketPrice}`,
+      40 + context.measureText(`￥${this.info.marketPrice}`).width,
+      510
+    );
     context.restore();
+    
+    wx.getImageInfo({
+      src: this.info.mainImgUrl, //图片的路径，可以是相对路径，临时文件路径，存储文件路径，网络图片路径,
+      complete: res => {
+        console.log("res...", res);
+        let rx, ry, rw, rh;
+        if (res.width / res.height > 220 / 260) {
+          ry = 0;
+          rh = res.height;
+          rw = res.height / 260 * 220;
+          rx = (res.width - rw) / 2;
+        } else {
+          rx = 0;
+          rw = res.width;
+          rh = res.height / 220 * 260;
+          ry = (res.height - rh) / 2;
+        }
+        context.drawImage(
+          this.info.mainImgUrl,
+          0,
+          0,
+          res.width,
+          res.height,
+          50,
+          80,
+          220,
+          260
+        );
+        context.draw(true, () => {
+          // 生成图片
+          wx.canvasToTempFilePath({
+            canvasId: "share",
+            quality: 1,
+            fileType: "jpg",
+            complete: res => {
+              console.log("tmpFile...", res);
+              // 预览一下
+              wx.previewImage({
+                urls: [res.tempFilePath] //需要预览的图片链接列表,
+              });
+              // 保存到本地
+            }
+          });
+        });
+      }
+    });
     context.draw();
   }
 };

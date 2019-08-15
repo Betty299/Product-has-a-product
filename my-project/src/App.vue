@@ -28,6 +28,7 @@ export default {
     console.log(`log at:${Date.now()}`)
   }
 }
+
 </script>
 
 <style lang="scss">
