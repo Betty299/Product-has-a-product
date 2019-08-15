@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/canvas/main",
     "pages/shoppingCar/main",
     "pages/index/main",
     "pages/mine/main",
