@@ -3,13 +3,13 @@
     <div class="name">
       <span>真实姓名</span>
       <span>
-        <input type="text" placeholder="请输入身份证姓名">
+        <input type="text" placeholder="请输入身份证姓名" v-model="name" @input="change">
       </span>
     </div>
     <div class="name">
       <span>身份证号</span>
       <span>
-        <input type="text" placeholder="请输入身份证号">
+        <input type="number" placeholder="请输入身份证号" v-model="phone" @input="change">
       </span>
     </div>
     <div class="username">
@@ -18,13 +18,23 @@
         <span>(图片png、jpg、大小不超过5M)</span>
       </p>
       <div>
-        <dl>
-          <dt>
-            <img src="/static/images/creame.png" alt>
+        <dl @click="up" v-if="uploaderList.length">
+          <dt  class="dls">
+            <img :src="uploaderList[0]" alt="" >
           </dt>
-          <dd>正面照片</dd>
         </dl>
-        <dl>
+        <dl @click="up" v-else>
+          <dt>
+            <img src="/static/images/creame.png" alt="" >
+          </dt>
+           <dd>正面照片</dd>
+        </dl>
+           <dl @click="reverse" v-if="useImage.length">
+          <dt class="dls">
+            <img :src="useImage[0]" alt>
+          </dt>
+        </dl>
+        <dl @click="reverse" v-else>
           <dt>
             <img src="/static/images/creame.png" alt>
           </dt>
@@ -47,11 +57,45 @@ export default {
   props: {},
   components: {},
   data() {
-    return {};
+    return {
+      name:"",
+      phone:"",
+      uploaderList:[],
+      useImage:[]
+    };
   },
   computed: {},
-  methods: {},
-  created() {},
+  methods: {
+    change(){
+      console.log(this.name,this.phone);
+    },
+    up(){
+      wx.chooseImage({
+        count:1,
+        sizeType:["original","compressed"],
+        sourceType:["album","camera"],
+        success:(res)=>{
+          console.log(res);
+          let tempFilePaths=res.tempFilePaths;
+         this.uploaderList=tempFilePaths;
+        }
+      })
+     
+    },reverse(){
+        wx.chooseImage({
+        count:1,
+        sizeType:["original","compressed"],
+        sourceType:["album","camera"],
+        success:(res)=>{
+          let tempFilePaths=res.tempFilePaths;
+         this.useImage=tempFilePaths;
+        }
+      })
+    }
+  },
+  created() {
+
+  },
   mounted() {}
 };
 </script>
@@ -101,7 +145,7 @@ export default {
     > div {
       width: 100%;
       display: flex;
-      dl {
+        dl {
         width: 40%;
         height: 100px;
         margin-left: 25px;
@@ -110,9 +154,6 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        input {
-          color: pink;
-        }
         dt {
           width: 50px;
           height: 50px;
@@ -122,6 +163,15 @@ export default {
             border-radius: 50%;
           }
         }
+          >.dls{
+       flex:1;
+       width:100%;
+        >img{
+           width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+      }
         dd {
           text-align: center;
           line-height: 30px;
