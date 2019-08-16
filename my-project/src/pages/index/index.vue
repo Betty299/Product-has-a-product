@@ -3,14 +3,15 @@
     <div class="search">
       <input placeholder="搜索" disabled/>
     </div>
-    <nav class="_scroll">
+    <!-- <nav class="_scroll">
       <li 
       v-for="(item,index) in tab"
       :key="index"
       :class="[index===ind?'active':'null']"
       @click="click(item,index)"
       >{{item.cname}}</li>
-    </nav>
+    </nav> -->
+  
     <section class="main">
       <div class="conter">
         <div class="swiper">
@@ -162,7 +163,7 @@ export default {
     }),
     click(item,index){
       this.getInd({index,item})
-      wx.navigateTo({ url: "classify/main" });
+      wx.navigateTo({ url: "/pages/classify/main" });
     }
   },
   created() {},

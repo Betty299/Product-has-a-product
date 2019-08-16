@@ -1,4 +1,5 @@
 import fly from '../utils/request.js';
-export let product = () => {
-  return fly.post('https://upapi.jinaup.com/api/open/microOrder/place/getCMicroOrderList/0');
+export let product = (params) => {
+  console.log("res",params);
+  return fly.post('/api/open/order/query/1.0.0');
 }

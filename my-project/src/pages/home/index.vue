@@ -64,8 +64,8 @@ export default {
    })
     },
     created(){
-// this.getSuggestion({pageIndex:"1",
-// orderStatus:"1"});
+this.getSuggestion({pageIndex:"1",
+orderStatus:"1"});
 
     },
     mounted(){
