@@ -1,21 +1,28 @@
-import fly from "../utils/request";
+import fly from '../utils/request';
 
-
-//首页横滚
-export function shouyeone() {
-return fly.post("/api/open/product/category/query/1.0.0")
+// 获取首页dl数据
+export function getHomeData() {
+  return fly.post("/api/open/page/home/list/1.0.0");
 }
-//首页最下边渲染
-export let shouyelist = () => {
-  return fly.post('https://upapi.jinaup.com/api/open/page/home/products/1.0.0')
+// 获取首页nav
+export function getNav(payload) {
+  return fly.post("/api/open/product/category/sub/1",payload);
 }
-
-//首页数据1
-export function shouyehaowu() {
-    return fly.post("/api/open/page/home/list/category")
+// 获取首页list数据
+export function getListData(payload) {
+  // console.log("ddddddd",payload)
+  return fly.post("/api/open/page/home/products/1.0.0",payload);
 }
-
-// //首页数据2
-// export function shouyelist() {
-//   return fly.post("/api/open/page/home/products/1.0.0")
-// }
+// 获取首页商品详情
+export function getDetail(payload) {
+  return fly.post("/api/open/product/info/1.0.0",payload);
+}
+export function getDetailNum(payload) {
+  return fly.post("/api/open/product/sku/attrs/1.0.0",payload);
+}
+export function getDetailImg(payload) {
+  return fly.post("/api/open/product/detailPicture/1.0.0",payload);
+}
+export function getDetailDq(payload) {
+  return fly.post("/api/open/shipping/templates/info/1.0.0",payload);
+}

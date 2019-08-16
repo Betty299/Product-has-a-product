@@ -50,7 +50,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -75,8 +75,6 @@
 				},
 				{
 					"id": -1,
-					"name": "shoppingCar",
-					"pathName": "pages/shoppingCar/main",
 					"name": "邀请码页",
 					"pathName": "pages/login/main",
 					"query": "",
@@ -84,8 +82,6 @@
 				},
 				{
 					"id": -1,
-					"name": "shopping",
-					"pathName": "pages/shopping/main",
 					"name": "商品详情",
 					"pathName": "pages/shoppingCar/main",
 					"query": "",
@@ -94,8 +90,14 @@
 				{
 					"id": -1,
 					"name": "canvas",
-					"pathName": "pages/canvas/main",
 					"pathName": "pages/toCanvas/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/share/main",
 					"scene": null
 				}
 			]

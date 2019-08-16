@@ -1,13 +1,15 @@
 <template>
-  <div class="lists" >
-    <div class="content"  @click="bindtoshoopcar(index)" v-for="(item,index) in list"  :key="index">
+  <div class="lists">
+    <div class="content" 
+    v-for="(item,index) in list"
+    :key="index"
+    >
       <div class="img">
         <img
           :src="item.productVo.mainImgUrl"
         />
       </div>
-      <div class="details" >
-
+      <div class="details">
         <div class="title">{{item.productVo.title}}</div>
         <div class="free">
           <label class="_span">包邮</label>
@@ -15,48 +17,30 @@
         </div>
         <div class="pics">
           <label class="p">￥</label>
-          <label class="pi">{{item.productVo.vipPrice}}</label>
-          <label class="ppp">￥{{item.productVo.supplyPrice}}</label>
+          <label class="pi">{{item.productVo.salesPrice}}</label>
+          <label class="ppp">￥{{item.productVo.vipPrice}}</label>
           <img src="/static/images/vip.svg" />
-          <label class="zp">赚￥77</label>
+          <label class="zp">赚￥11.92</label>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import {mapState,mapActions } from "vuex"
 export default {
-  props: {},
+  props: {
+    list: {
+      type: Array,
+      default: []
+    }
+  },
   components: {},
   data() {
-    return {
-address:[]
-    };
+    return {};
   },
-  computed: {
-    ...mapState({
-      list:state=>state.shouye.list
-    })
-  },
-  methods: {
-    
-    ...mapActions({
-      getshouyelist:"shouye/shouyelist"
-    }),
-       bindtoshoopcar(index){
-         console.log(index)
-         this.address=index
-      
-        wx.navigateTo({
-          url:"/pages/shoppingCar/main?lists="+this.address
-        })
-      },
-  },
-  created() {
-   
-    this.getshouyelist()
-  },
+  computed: {},
+  methods: {},
+  created() {},
   mounted() {}
 };
 </script>
